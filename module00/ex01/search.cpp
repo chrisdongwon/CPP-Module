@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:38:43 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 18:37:31 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/08 18:48:19 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,14 @@ void Search(PhoneBook* phonebook) {
   try {
     size_t index = StringToSizeT(input);
 
-    if (!index || index > phonebook->Count()) {
-      std::cout << "Index out of range" << std::endl;
+    if (index == 0 || index > phonebook->Count()) {
+      std::cout << "Invalid index: out of range" << std::endl;
       return;
     }
+
     PrintContact(phonebook->ContactAt((phonebook->Start() + index - 1) % 8));
   } catch (const std::exception& e) {
-    std::cout << "Input larger than size_t maximum" << std::endl;
+    std::cout << "Invalid input: expected a non-negative integer (size_t)"
+              << std::endl;
   }
 }

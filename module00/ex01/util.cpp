@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 17:39:43 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 18:05:15 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/08 18:51:16 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ const std::string PromptUserInput(const std::string field_type) {
     std::getline(std::cin, response);
     if (!response.empty())
       break;
-    std::cout << "Cannot be empty" << std::endl;
+    std::cout << "Error: " << field_type 
+              << " cannot be empty. Please try again." << std::endl;
   }
   return response;
 }
@@ -45,7 +46,9 @@ const std::string PromptUserNumber(const std::string field_type) {
     response = PromptUserInput(field_type);
     if (IsAllDigits(response))
       break;
-    std::cout << "Digits only" << std::endl;
+    std::cout << "Error: " << field_type
+              << " must contain only digits (0–9). Please try again."
+              << std::endl;
   }
   return response;
 }
@@ -53,10 +56,10 @@ const std::string PromptUserNumber(const std::string field_type) {
 size_t StringToSizeT(const std::string& str) {
     size_t result;
     std::stringstream ss(str);
-  
+
     ss >> result;
     if (ss.fail() || !ss.eof()) {
-        throw std::invalid_argument("Invalid input");
+        throw std::invalid_argument("Expected a non-negative integer (size_t)");
     }
     return result;
 }
