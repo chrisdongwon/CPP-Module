@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   my_awesome_phonebook.cpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 09:54:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 13:34:59 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/08 14:45:58 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_awesome_phonebook.hpp"
 
-int main() {
-  MyAwesomePhoneBook();
-  return 0;
+#include <iostream>
+#include <string>
+
+void MyAwesomePhoneBook() {
+  PhoneBook phonebook;
+  std::string command;
+
+  while (true) {
+    std::cout << "Command (ADD, SEARCH, EXIT): ";
+    std::getline(std::cin, command);
+    if (command == "ADD") {
+      Add(&phonebook);
+    } else if (command == "SEARCH") {
+      Search(&phonebook);
+    } else if (command == "EXIT") {
+      return;
+    }
+  }
 }

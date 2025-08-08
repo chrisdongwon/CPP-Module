@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 14:41:37 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 07:47:17 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/08 17:44:51 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@ class PhoneBook {
  public:
   PhoneBook();
 
-  const Contact& GetContactAt(int index) const;
+  const Contact& ContactAt(size_t index) const;
+  size_t Count() const;
+  size_t Start() const;
+
   void AddContact(const Contact& contact);
 
  private:
   Contact contacts_[8];
-  int index_;
+  size_t count_;
+  size_t index_;
+  size_t start_;
 };
 
 #endif  // PHONEBOOK_HPP_
