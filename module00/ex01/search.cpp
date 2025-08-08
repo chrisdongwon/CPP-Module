@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:38:43 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 18:31:53 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/08 18:37:31 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void Search(PhoneBook* phonebook) {
     }
     PrintContact(phonebook->ContactAt((phonebook->Start() + index - 1) % 8));
   } catch (const std::exception& e) {
-    std::cout << "Invalid input" << std::endl;
+    std::cout << "Input larger than size_t maximum" << std::endl;
   }
 }
