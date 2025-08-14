@@ -6,11 +6,11 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/07 07:49:15 by cwon              #+#    #+#              #
-#    Updated: 2025/08/08 22:41:20 by cwon             ###   ########.fr        #
+#    Updated: 2025/08/14 15:59:59 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = ex01
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
