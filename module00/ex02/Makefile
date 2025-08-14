@@ -5,28 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/07 07:49:15 by cwon              #+#    #+#              #
-#    Updated: 2025/08/08 22:41:20 by cwon             ###   ########.fr        #
+#    Created: 2025/08/08 22:40:30 by cwon              #+#    #+#              #
+#    Updated: 2025/08/14 15:32:53 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = tests
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = \
-	Contact.hpp \
-	my_awesome_phonebook.hpp \
-	PhoneBook.hpp
+	Account.hpp
 SRC = \
-	add.cpp \
-	Contact.cpp \
-	my_awesome_phonebook.cpp \
-	PhoneBook.cpp \
-	search.cpp \
-	util.cpp
-MAIN = main.cpp
+	Account.cpp
+MAIN = tests.cpp
 OBJ = $(SRC:.cpp=.o) $(MAIN:.cpp=.o)
 
 all: $(NAME)
