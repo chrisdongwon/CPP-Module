@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 15:11:21 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 16:45:27 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 
-void MyAwesomePhoneBook() {
+void MyAwesomePhoneBook( void ) {
   PhoneBook phonebook;
   std::string command;
 

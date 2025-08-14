@@ -6,13 +6,13 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 09:54:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 13:34:59 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 16:45:22 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_awesome_phonebook.hpp"
 
-int main() {
+int main( void ) {
   MyAwesomePhoneBook();
   return 0;
 }

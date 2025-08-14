@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:38:43 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 15:11:30 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 16:41:28 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static std::string FormatField(const std::string& str) {
   return str;
 }
 
-static void PrintHeader() {
+static void PrintHeader(void) {
   std::cout << std::setw(10) << "Index" << "|"
             << std::setw(10) << "First name" << "|"
             << std::setw(10) << "Last name" << "|"

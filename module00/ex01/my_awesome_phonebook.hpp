@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:30:29 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 18:03:50 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 16:45:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ size_t StringToSizeT(const std::string& str);
 void Add(PhoneBook* phonebook);
 void Search(PhoneBook* phonebook);
 
-void MyAwesomePhoneBook();
+void MyAwesomePhoneBook( void );
 
 #endif

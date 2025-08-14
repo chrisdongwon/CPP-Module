@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 14:33:21 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 15:42:24 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 16:46:38 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-Account::Account(void)
+Account::Account( void )
     : _accountIndex(_nbAccounts++),
       _amount(0),
       _nbDeposits(0),
@@ -39,7 +39,7 @@ Account::Account(int initial_deposit)
             << ";created" << std::endl;
 }
 
-Account::~Account(void) {
+Account::~Account( void ) {
   _nbAccounts--;
   _totalAmount -= _amount;
 
@@ -49,23 +49,23 @@ Account::~Account(void) {
             << ";closed" << std::endl;
 }
 
-int Account::getNbAccounts(void) {
+int Account::getNbAccounts( void ) {
   return _nbAccounts;
 }
 
-int Account::getTotalAmount(void) {
+int Account::getTotalAmount( void ) {
   return _totalAmount;
 }
 
-int Account::getNbDeposits(void) {
+int Account::getNbDeposits( void ) {
   return _totalNbDeposits;
 }
 
-int Account::getNbWithdrawals(void) {
+int Account::getNbWithdrawals( void ) {
   return _totalNbWithdrawals;
 }
 
-void Account::displayAccountsInfos(void) {
+void Account::displayAccountsInfos( void ) {
   _displayTimestamp();
   std::cout << "accounts:" << _nbAccounts
             << ";total:" << _totalAmount
@@ -114,11 +114,11 @@ bool Account::makeWithdrawal(int withdrawal) {
   return true;
 }
 
-int Account::checkAmount(void) const {
+int Account::checkAmount( void ) const {
   return _amount;
 }
 
-void Account::displayStatus(void) const {
+void Account::displayStatus( void ) const {
   _displayTimestamp();
   std::cout << "index:" << _accountIndex
             << ";amount:" << _amount
@@ -127,7 +127,7 @@ void Account::displayStatus(void) const {
             << std::endl;
 }
 
-void Account::_displayTimestamp(void) {
+void Account::_displayTimestamp( void ) {
   std::time_t t = std::time(NULL);
   std::tm* now = std::localtime(&t);
 

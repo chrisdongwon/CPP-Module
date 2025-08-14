@@ -6,25 +6,26 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 10:07:04 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/08 18:27:04 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 16:45:44 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : count_(0),
-                         index_(0),
-                         start_(0) {}
+PhoneBook::PhoneBook( void )
+    : count_(0),
+      index_(0),
+      start_(0) {}
 
 const Contact& PhoneBook::ContactAt(size_t index) const {
   return contacts_[index];
 }
 
-size_t PhoneBook::Count() const {
+size_t PhoneBook::Count( void ) const {
   return count_;
 }
 
-size_t PhoneBook::Start() const {
+size_t PhoneBook::Start( void ) const {
   return start_;
 }
 
