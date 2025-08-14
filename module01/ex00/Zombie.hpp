@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 16:09:11 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 16:43:23 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 16:49:16 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class Zombie {
  public:
   explicit Zombie(const std::string& name);
-  ~Zombie(void);
+  ~Zombie( void );
 
-  void announce(void);
+  void announce( void );
 
  private:
   std::string name_;

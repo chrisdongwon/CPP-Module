@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search.cpp                                         :+:      :+:    :+:   */
+/*   PhoneBookApp.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 13:38:43 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 16:41:28 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/14 17:14:41 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_awesome_phonebook.hpp"
+#include "PhoneBookApp.hpp"
+
 #include <iomanip>
 #include <iostream>
+#include <string>
+
+#include "PhoneBook.hpp"
+#include "util.hpp"
 
 static std::string FormatField(const std::string& str) {
   if (str.length() > 10) {
@@ -50,7 +55,7 @@ static void PrintContact(const Contact& c) {
   std::cout << "Darkest Secret: " << c.DarkestSecret() << std::endl;
 }
 
-void Search(PhoneBook* phonebook) {
+void SearchInteractive(PhoneBook* phonebook) {
   PrintContacts(phonebook);  
   std::string input = PromptUserNumber("Index");
 
@@ -66,5 +71,36 @@ void Search(PhoneBook* phonebook) {
   } catch (const std::exception& e) {
     std::cout << "Invalid input: expected a non-negative integer (size_t)"
               << std::endl;
+  }
+}
+
+static void AddContactInteractive(PhoneBook* phonebook) {
+  std::string first_name = PromptUserInput("First name");
+  std::string last_name = PromptUserInput("Last name");
+  std::string nickname = PromptUserInput("Nickname");
+  std::string phone_number = PromptUserNumber("Phone Number");
+  std::string darkest_secret = PromptUserInput("Darkest secret");
+  Contact new_contact = Contact(darkest_secret,
+                                 first_name,
+                                 last_name,
+                                 nickname,
+                                 phone_number);
+  phonebook->AddContact(new_contact);
+}
+
+void RunPhoneBook( void ) {
+  PhoneBook phonebook;
+  std::string command;
+
+  while (true) {
+    std::cout << "Command (ADD, SEARCH, EXIT): ";
+    std::getline(std::cin, command);
+    if (command == "ADD") {
+      AddContactInteractive(&phonebook);
+    } else if (command == "SEARCH") {
+      SearchInteractive(&phonebook);
+    } else if (command == "EXIT") {
+      return;
+    }
   }
 }

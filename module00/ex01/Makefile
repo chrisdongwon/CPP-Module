@@ -6,7 +6,7 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/07 07:49:15 by cwon              #+#    #+#              #
-#    Updated: 2025/08/14 15:59:59 by cwon             ###   ########.fr        #
+#    Updated: 2025/08/14 17:13:42 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,13 @@ CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
 
 HEADER = \
 	Contact.hpp \
-	my_awesome_phonebook.hpp \
-	PhoneBook.hpp
+	PhoneBook.hpp \
+	PhoneBookApp.hpp \
+	util.hpp
 SRC = \
-	add.cpp \
 	Contact.cpp \
-	my_awesome_phonebook.cpp \
 	PhoneBook.cpp \
-	search.cpp \
+	PhoneBookApp.cpp \
 	util.cpp
 MAIN = main.cpp
 OBJ = $(SRC:.cpp=.o) $(MAIN:.cpp=.o)

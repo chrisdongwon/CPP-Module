@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_awesome_phonebook.cpp                           :+:      :+:    :+:   */
+/*   util.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 16:45:27 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/14 17:09:04 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/14 17:14:01 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_awesome_phonebook.hpp"
-#include <iostream>
+#ifndef UTIL_HPP_
+#define UTIL_HPP_
+
 #include <string>
 
-void MyAwesomePhoneBook( void ) {
-  PhoneBook phonebook;
-  std::string command;
+const std::string PromptUserInput(const std::string field_type);
+const std::string PromptUserNumber(const std::string field_type);
+size_t StringToSizeT(const std::string& str);
 
-  while (true) {
-    std::cout << "Command (ADD, SEARCH, EXIT): ";
-    std::getline(std::cin, command);
-    if (command == "ADD") {
-      Add(&phonebook);
-    } else if (command == "SEARCH") {
-      Search(&phonebook);
-    } else if (command == "EXIT") {
-      return;
-    }
-  }
-}
+#endif // UTIL_HPP_

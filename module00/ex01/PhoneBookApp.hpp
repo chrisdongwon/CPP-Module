@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_awesome_phonebook.hpp                           :+:      :+:    :+:   */
+/*   PhoneBookApp.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:30:29 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 16:45:35 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 17:09:55 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_AWESOME_PHONEBOOK_HPP_
-#define MY_AWESOME_PHONEBOOK_HPP_
+#ifndef PHONE_BOOK_APP_HPP_
+#define PHONE_BOOK_APP_HPP_
 
-#include "PhoneBook.hpp"
+void RunPhoneBook( void );
 
-const std::string PromptUserInput(const std::string field_type);
-const std::string PromptUserNumber(const std::string field_type);
-size_t StringToSizeT(const std::string& str);
-
-void Add(PhoneBook* phonebook);
-void Search(PhoneBook* phonebook);
-
-void MyAwesomePhoneBook( void );
-
-#endif
+#endif // PHONE_BOOK_APP_HPP_
