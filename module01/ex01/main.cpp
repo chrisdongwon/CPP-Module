@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 17:17:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 00:15:07 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/16 00:22:45 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/16 01:02:17 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
 #include <iostream>
 
-Zombie* newZombie(const std::string& name) {
-  try {
-    return new Zombie(name);
-  } catch (const std::bad_alloc& e) {
-    std::cerr << "Memory allocation failed for Zombie: " << e.what() << '\n';
-    return NULL;
+#include "Zombie.hpp"
+
+int main() {
+  int N = 5;
+  Zombie* horde = zombieHorde(N, "Foo");
+
+  if (horde == NULL) {
+    std::cerr << "Failed to create zombie horde" << std::endl;
+    return 1;
   }
+  for (int i = 0; i < N; ++i) {
+    horde[i].announce();
+  }
+  delete[] horde;
+  return 0;
 }

@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 17:17:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 00:15:07 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/16 01:00:34 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/16 01:10:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-#include <iostream>
+Weapon::Weapon(const std::string& type) : type_(type) {}
 
-Zombie* newZombie(const std::string& name) {
-  try {
-    return new Zombie(name);
-  } catch (const std::bad_alloc& e) {
-    std::cerr << "Memory allocation failed for Zombie: " << e.what() << '\n';
-    return NULL;
-  }
+const std::string& Weapon::getType() const {
+  return type_;
+}
+
+void Weapon::setType(const std::string& type) {
+  type_ = type;
 }

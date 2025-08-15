@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 16:09:11 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 16:49:16 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/14 17:27:19 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ class Zombie {
  private:
   std::string name_;
 };
+
+Zombie* newZombie(const std::string& name);
+void randomChump(const std::string& name);
 
 #endif  // ZOMBIE_HPP_

@@ -5,27 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/14 16:01:49 by cwon              #+#    #+#              #
-#    Updated: 2025/08/16 00:14:03 by cwon             ###   ########.fr        #
+#    Created: 2025/08/16 00:40:41 by cwon              #+#    #+#              #
+#    Updated: 2025/08/16 00:48:45 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex02
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
 
-HEADER = Zombie.hpp
-SRC = \
-	newZombie.cpp \
-	randomChump.cpp \
-	Zombie.cpp
 MAIN = main.cpp
-OBJ = $(SRC:.cpp=.o) $(MAIN:.cpp=.o)
+OBJ = $(MAIN:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp

@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 17:17:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 00:15:07 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/16 01:07:57 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/16 01:09:10 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP_
+#define HUMANB_HPP_
 
-#include <iostream>
+#include <string>
 
-Zombie* newZombie(const std::string& name) {
-  try {
-    return new Zombie(name);
-  } catch (const std::bad_alloc& e) {
-    std::cerr << "Memory allocation failed for Zombie: " << e.what() << '\n';
-    return NULL;
-  }
-}
+#include "Weapon.hpp"
+
+class HumanB {
+ public:
+  explicit HumanB(const std::string& name);
+
+  void setWeapon(Weapon& weapon);
+  void attack( void ) const;
+
+ private:
+  std::string name_;
+  Weapon* weapon_;
+};
+
+#endif  // HUMANB_HPP_

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 17:17:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 00:15:07 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/16 01:09:17 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/16 01:12:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
 #include <iostream>
 
-Zombie* newZombie(const std::string& name) {
-  try {
-    return new Zombie(name);
-  } catch (const std::bad_alloc& e) {
-    std::cerr << "Memory allocation failed for Zombie: " << e.what() << '\n';
-    return NULL;
+HumanB::HumanB(const std::string& name)
+    : name_(name),
+      weapon_(NULL) {}
+
+void HumanB::setWeapon(Weapon& weapon) {
+  weapon_ = &weapon;
+}
+
+void HumanB::attack( void ) const {
+  if (weapon_) {
+    std::cout << name_ << " attacks with their "
+              << weapon_->getType() << std::endl;
   }
 }
