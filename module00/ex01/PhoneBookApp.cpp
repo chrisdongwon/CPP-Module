@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 17:24:58 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/16 21:01:02 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void PrintContacts(const PhoneBook& phonebook) {
   size_t starting_index = phonebook.Start();
 
   PrintHeader();
-  for (size_t i = 0; i < count; i++) {
+  for (size_t i = 0; i < count; ++i) {
     const Contact& c = phonebook.ContactAt((starting_index + i) % 8);
     std::cout << std::setw(10) << i + 1 << "|"
               << std::setw(10) << FormatField(c.FirstName()) << "|"

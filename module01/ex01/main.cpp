@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 00:22:45 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 01:02:17 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/16 18:15:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "Zombie.hpp"
 
-int main() {
+int main( void ) {
   int N = 5;
   Zombie* horde = zombieHorde(N, "Foo");
 

@@ -5,33 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 01:13:38 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/18 14:48:33 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/16 17:52:40 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/18 16:40:37 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Replacer.hpp"
 
-int main()
-{
-  {
-    Weapon  club = Weapon("crude spiked club");
-
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("some other type of club");
-    bob.attack();
-  }
-  {
-    Weapon  club = Weapon("crude spiked club");
-
-    HumanB jim("Jim");
-    jim.setWeapon(club);
-    jim.attack();
-    club.setType("some other type of club");
-    jim.attack();
-  }
-  
+int main(int argc, char **argv) {
+  RunReplacer(argc, argv);
   return 0;
 }

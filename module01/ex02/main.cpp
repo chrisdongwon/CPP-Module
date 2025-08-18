@@ -6,14 +6,14 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 00:41:12 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 00:48:08 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/16 18:15:50 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 
-int main() {
+int main( void ) {
     std::string var = "HI THIS IS BRAIN";
     std::string* stringPTR = &var;
     std::string& stringREF = var;
