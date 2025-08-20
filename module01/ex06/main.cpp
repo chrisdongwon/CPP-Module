@@ -5,19 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 07:55:53 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/20 10:50:48 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/20 11:37:58 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/20 13:56:48 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+
 #include "Harl.hpp"
 
-int main( void ) {
-  Harl h;
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    std::cout << "[ Probably complaining about insignificant problems ]"
+              << std::endl;
+    return 1;
+  }
 
-  h.complain("DEBUG");
-  h.complain("INFO");
-  h.complain("WARNING");
-  h.complain("ERROR");
-  return 0;
+  Harl h(argv[1]);
+
+  return h.HarlFilter();
 }

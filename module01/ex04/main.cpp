@@ -6,13 +6,13 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 17:52:40 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/18 16:40:37 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/20 11:56:26 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Replacer.hpp"
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
   RunReplacer(argc, argv);
   return 0;
 }

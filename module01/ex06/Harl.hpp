@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 07:48:19 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/20 10:45:16 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/20 13:08:39 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/20 13:56:52 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,24 @@
 
 class Harl {
  public:
-  Harl( void );
-  void complain(std::string level);
+  explicit Harl(const char *level);
+  int HarlFilter( void ) const;
 
  private:
-  void debug( void );
-  void error( void );
-  void info ( void );
-  void warning( void );
+  enum Level {
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR
+  };
 
-  std::map<std::string, void (Harl::*)(void)> methods_;
+  void Debug( void ) const;
+  void Info ( void ) const;
+  void Warning( void ) const;
+  void Error( void ) const;
+
+  std::map<std::string, Level> levels_;
+  std::string level_;
 };
 
 #endif
