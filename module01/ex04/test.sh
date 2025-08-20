@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Running tests for Replacer."
+echo "Running tests for Replacer"
 
 # Test 1: Basic replacement
 echo "hello world" > file1.txt

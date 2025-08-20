@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:16:30 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/18 16:41:23 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/18 16:56:02 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ void Replacer::Write( void ) const {
   std::ofstream outfile((filename_ + ".replace").c_str());
   
   if (!outfile) {
-    throw std::runtime_error("Cannot open output file: " + filename_+ ".replace");
+    throw std::runtime_error("Cannot open output file: " + filename_ +
+                             ".replace");
   }
   outfile << content_;
   outfile.close();
