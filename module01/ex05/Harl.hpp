@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 07:48:19 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/20 10:45:16 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/20 15:23:32 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ class Harl {
   std::map<std::string, void (Harl::*)(void)> methods_;
 };
 
-#endif
+#endif // HARL_HPP_
