@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 08:47:10 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 12:10:21 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/21 10:13:33 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/21 12:13:07 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,33 @@ class Fixed {
   
   Fixed& operator=(const Fixed& other);
 
+  bool operator>(const Fixed& other) const;
+  bool operator<(const Fixed& other) const;
+  bool operator>=(const Fixed& other) const;
+  bool operator<=(const Fixed& other) const;
+  bool operator==(const Fixed& other) const;
+  bool operator!=(const Fixed& other) const;
+
+  Fixed operator+(const Fixed& other) const;
+  Fixed operator-(const Fixed& other) const;
+  Fixed operator*(const Fixed& other) const;
+  Fixed operator/(const Fixed& other) const;
+
+  Fixed& operator++( void );
+  Fixed operator++(int);
+  Fixed& operator--( void );
+  Fixed operator--(int);
+
   int getRawBits( void ) const;
   void setRawBits(int const raw);
 
   float toFloat( void ) const;
   int toInt ( void ) const;
+
+  static Fixed& min(Fixed& a, Fixed& b);
+  static const Fixed& min(const Fixed& a, const Fixed& b);
+  static Fixed& max(Fixed& a, Fixed& b);
+  static const Fixed& max(const Fixed& a, const Fixed& b);
 
  private:
   int value_;

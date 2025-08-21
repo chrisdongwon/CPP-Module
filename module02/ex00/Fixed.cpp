@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:26:19 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 09:03:32 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/21 12:09:56 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::Fixed(const Fixed& other) {
   *this = other;
 }
 
-Fixed::~Fixed( void ) {
+Fixed::~Fixed() {
   std::cout << "Destructor called" << std::endl;
 }
 

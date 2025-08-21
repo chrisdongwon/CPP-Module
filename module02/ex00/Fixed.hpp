@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:22:18 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 09:02:10 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/21 12:10:05 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Fixed {
   Fixed( void );
   Fixed(const Fixed& other);
   
-  ~Fixed( void );
+  ~Fixed();
 
   Fixed& operator=(const Fixed& other);
 
