@@ -5,17 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 15:26:19 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 09:03:32 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/21 09:00:06 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/21 09:49:49 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-#include <iostream>
+#include <cmath>
 
 Fixed::Fixed( void ) : value_(0) {
   std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int value) {
+  std::cout << "Int constructor called" << std::endl;
+  value_ = value << kFractionalBits;
+}
+
+Fixed::Fixed(const float value) {
+  std::cout << "Float constructor called" << std::endl;
+  value_ = static_cast<int>(roundf(value * (1 << kFractionalBits)));
 }
 
 Fixed::Fixed(const Fixed& other) {
@@ -23,24 +33,27 @@ Fixed::Fixed(const Fixed& other) {
   *this = other;
 }
 
-Fixed::~Fixed( void ) {
-  std::cout << "Destructor called" << std::endl;
-}
-
 Fixed& Fixed::operator=(const Fixed& other) {
   std::cout << "Copy assignment operator called" << std::endl;
   if (this != &other) {
-    value_ = other.getRawBits();
+    value_ = other.value_;
   }
   return *this;
 }
 
-int Fixed::getRawBits( void ) const {
-  std::cout << "getRawBits member function called" << std::endl;
-  return value_;
+Fixed::~Fixed( void ) {
+  std::cout << "Destructor called" << std::endl;
 }
 
-void Fixed::setRawBits(int const raw) {
-  std::cout << "setRawBits member function called" << std::endl;
-  value_ = raw;
+float Fixed::toFloat( void ) const {
+  return static_cast<float>(value_) / (1 << kFractionalBits);
+}
+
+int Fixed::toInt ( void ) const {
+  return value_ >> kFractionalBits;
+}
+
+std::ostream& operator<<(std::ostream &os, const Fixed& fixed) {
+  os << fixed.toFloat();
+  return os;
 }

@@ -5,29 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 15:22:18 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 09:02:10 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/21 08:47:10 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/21 09:04:17 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP_
 #define FIXED_HPP_
 
+#include <iostream>
+
 class Fixed {
  public:
   Fixed( void );
   Fixed(const Fixed& other);
-  
-  ~Fixed( void );
+  explicit Fixed(const int value);
+  explicit Fixed(const float value);
 
+  ~Fixed( void );
+  
   Fixed& operator=(const Fixed& other);
 
-  int getRawBits( void ) const;
-  void setRawBits(int const raw);
+  float toFloat( void ) const;
+  int toInt ( void ) const;
 
  private:
   int value_;
   static const int kFractionalBits = 8;
 };
+
+std::ostream& operator<<(std::ostream &os, const Fixed& fixed);
 
 #endif  // FIXED_HPP_
