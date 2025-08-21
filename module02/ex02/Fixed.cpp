@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 12:30:49 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 12:51:29 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/21 12:57:42 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ Fixed Fixed::operator/(const Fixed& other) const {
   return result;
 }
 
-Fixed& Fixed::operator++() {
+Fixed& Fixed::operator++( void ) {
   ++value_;
   return *this;
 }
@@ -103,7 +103,7 @@ Fixed Fixed::operator++(int) {
   return tmp;
 }
 
-Fixed& Fixed::operator--() {
+Fixed& Fixed::operator--( void ) {
   --value_;
   return *this;
 }
@@ -131,19 +131,19 @@ int Fixed::toInt ( void ) const {
   return value_ >> kFractionalBits;
 }
 
-static Fixed& min(Fixed& a, Fixed& b) {
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
   return (a < b) ? a : b;
 }
 
-static const Fixed& min(const Fixed& a, const Fixed& b) {
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
   return (a < b) ? a : b;
 }
 
-static Fixed& max(Fixed& a, Fixed& b) {
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
   return (a > b) ? a : b;
 }
 
-static const Fixed& max(const Fixed& a, const Fixed& b) {
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
   return (a > b) ? a : b;
 }
 
