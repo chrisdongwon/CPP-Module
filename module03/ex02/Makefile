@@ -6,21 +6,21 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/22 08:05:21 by cwon              #+#    #+#              #
-#    Updated: 2025/08/22 13:27:26 by cwon             ###   ########.fr        #
+#    Updated: 2025/08/22 13:30:29 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
 
 HEADER = \
 	ClapTrap.hpp \
-	ScavTrap.hpp
+	FragTrap.hpp
 SRC = \
 	ClapTrap.cpp \
-	ScavTrap.cpp
+	FragTrap.cpp
 MAIN = main.cpp
 OBJ = $(SRC:.cpp=.o) $(MAIN:.cpp=.o)
 

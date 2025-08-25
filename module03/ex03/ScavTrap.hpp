@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 09:15:03 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/22 13:31:05 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/24 15:30:38 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
  public:
   explicit ScavTrap(const std::string& name);
   ScavTrap(const ScavTrap& other);
