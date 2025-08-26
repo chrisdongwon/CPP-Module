@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 21:01:02 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/26 13:34:05 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,25 @@ static void PrintHeader( void ) {
 }
 
 static void PrintContacts(const PhoneBook& phonebook) {
-  size_t count = phonebook.Count();
-  size_t starting_index = phonebook.Start();
+  size_t count = phonebook.count();
+  size_t starting_index = phonebook.start();
 
   PrintHeader();
   for (size_t i = 0; i < count; ++i) {
-    const Contact& c = phonebook.ContactAt((starting_index + i) % 8);
+    const Contact& c = phonebook.contacts((starting_index + i) % 8);
     std::cout << std::setw(10) << i + 1 << "|"
-              << std::setw(10) << FormatField(c.FirstName()) << "|"
-              << std::setw(10) << FormatField(c.LastName()) << "|"
-              << std::setw(10) << FormatField(c.Nickname()) << "\n";
+              << std::setw(10) << FormatField(c.first_name()) << "|"
+              << std::setw(10) << FormatField(c.last_name()) << "|"
+              << std::setw(10) << FormatField(c.nickname()) << "\n";
   }
 }
 
 static void PrintContact(const Contact& c) {
-  std::cout << "First Name: " << c.FirstName() << "\n";
-  std::cout << "Last Name: " << c.LastName() << "\n";
-  std::cout << "Nickname: " << c.Nickname() << "\n";
-  std::cout << "Phone Number: " << c.PhoneNumber() << "\n";
-  std::cout << "Darkest Secret: " << c.DarkestSecret() << std::endl;
+  std::cout << "First Name: " << c.first_name() << "\n";
+  std::cout << "Last Name: " << c.last_name() << "\n";
+  std::cout << "Nickname: " << c.nickname() << "\n";
+  std::cout << "Phone Number: " << c.phone_number() << "\n";
+  std::cout << "Darkest Secret: " << c.darkest_secret() << std::endl;
 }
 
 void SearchInteractive(PhoneBook& phonebook) {
@@ -62,12 +62,12 @@ void SearchInteractive(PhoneBook& phonebook) {
   try {
     size_t index = StringToSizeT(input);
 
-    if (index == 0 || index > phonebook.Count()) {
+    if (index == 0 || index > phonebook.count()) {
       std::cout << "Invalid index: out of range" << std::endl;
       return;
     }
 
-    PrintContact(phonebook.ContactAt((phonebook.Start() + index - 1) % 8));
+    PrintContact(phonebook.contacts((phonebook.start() + index - 1) % 8));
   } catch (const std::exception& e) {
     std::cout << "Invalid input: expected a non-negative integer (size_t)"
               << std::endl;

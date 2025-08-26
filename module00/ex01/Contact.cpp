@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 09:55:28 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 16:45:12 by cwon             ###   ########.fr       */
+/*   Updated: 2025/08/26 13:30:57 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,22 @@ Contact::Contact(const std::string& darkest_secret,
       nickname_(nickname),
       phone_number_(phone_number) {}
 
-const std::string& Contact::DarkestSecret( void ) const {
+const std::string& Contact::darkest_secret( void ) const {
   return darkest_secret_;
 }
 
-const std::string& Contact::FirstName( void ) const {
+const std::string& Contact::first_name( void ) const {
   return first_name_;
 }
 
-const std::string& Contact::LastName( void ) const {
+const std::string& Contact::last_name( void ) const {
   return last_name_;
 }
 
-const std::string& Contact::Nickname( void ) const {
+const std::string& Contact::nickname( void ) const {
   return nickname_;
 }
 
-const std::string& Contact::PhoneNumber( void ) const {
+const std::string& Contact::phone_number( void ) const {
   return phone_number_;
 }

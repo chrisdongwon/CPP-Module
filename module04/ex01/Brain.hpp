@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/25 16:11:24 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 16:44:23 by cwon             ###   ########.fr       */
+/*   Created: 2025/08/26 13:03:08 by cwon              #+#    #+#             */
+/*   Updated: 2025/08/26 14:35:01 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP_
-#define ANIMAL_HPP_
+#ifndef BRAIN_HPP_
+#define BRAIN_HPP_
 
 #include <string>
 
-class Animal {
+class Brain {
  public:
-  Animal( void );
-  Animal(const Animal& other);
+  Brain( void );
+  Brain(const Brain& other);
 
-  Animal& operator=(const Animal& other);
+  Brain& operator=(const Brain& other);
 
-  virtual ~Animal();
+  ~Brain();
 
-  std::string getType( void ) const;
-  virtual void makeSound( void ) const;
+  std::string ideas(int i) const;
+  void set_ideas(int i, const std::string& idea);
 
- protected:
-  Animal(std::string type);
-  
-  std::string type_;
+ private:
+  std::string ideas_[100];
 };
 
-#endif // ANIMAL_HPP_
+#endif // BRAIN_HPP_
