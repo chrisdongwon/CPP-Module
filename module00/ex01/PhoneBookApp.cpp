@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/26 13:34:05 by cwon             ###   ########.fr       */
+/*   Updated: 2025/09/28 14:48:54 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,10 @@ static void PrintHeader( void ) {
 
 static void PrintContacts(const PhoneBook& phonebook) {
   size_t count = phonebook.count();
-  size_t starting_index = phonebook.start();
 
   PrintHeader();
   for (size_t i = 0; i < count; ++i) {
-    const Contact& c = phonebook.contacts((starting_index + i) % 8);
+    const Contact& c = phonebook.contacts(i % SIZE);
     std::cout << std::setw(10) << i + 1 << "|"
               << std::setw(10) << FormatField(c.first_name()) << "|"
               << std::setw(10) << FormatField(c.last_name()) << "|"
@@ -67,7 +66,7 @@ void SearchInteractive(PhoneBook& phonebook) {
       return;
     }
 
-    PrintContact(phonebook.contacts((phonebook.start() + index - 1) % 8));
+    PrintContact(phonebook.contacts((index - 1) % SIZE));
   } catch (const std::exception& e) {
     std::cout << "Invalid input: expected a non-negative integer (size_t)"
               << std::endl;
