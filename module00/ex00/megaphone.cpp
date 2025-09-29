@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 13:16:56 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/07 14:19:24 by cwon             ###   ########.fr       */
+/*   Updated: 2025/09/29 14:12:16 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 
 static std::string Capitalize(const std::string& input) {
   std::string result;
-
   result.reserve(input.size());
-  for (char c : input) {
-    result.push_back(std::toupper(static_cast<unsigned char>(c)));
+
+  for (std::string::size_type i = 0; i < input.size(); ++i) {
+    unsigned char c = static_cast<unsigned char>(input[i]);
+    result += static_cast<char>(std::toupper(c));
   }
   return result;
 }
