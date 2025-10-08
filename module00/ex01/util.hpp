@@ -15,6 +15,7 @@
 
 #include <string>
 
+bool SafeGetline(std::string& input);
 const std::string PromptUserInput(const std::string field_type);
 const std::string PromptUserNumber(const std::string field_type);
 size_t StringToSizeT(const std::string& str);

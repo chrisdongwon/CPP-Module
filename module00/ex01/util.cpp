@@ -24,13 +24,28 @@ static bool IsAllDigits(const std::string& input) {
   return true;
 }
 
+bool SafeGetline(std::string& input) {
+  if (!std::getline(std::cin, input)) {
+    if (std::cin.eof()) {
+      std::cout << "\nEOF detected — exiting program...\n";
+      exit(EXIT_SUCCESS);
+    } else {
+      std::cin.clear();
+    }
+    return false;
+  }
+  return true;
+}
+
 const std::string PromptUserInput(const std::string field_type) {
   std::string response;
 
   while (true)
   {
     std::cout << field_type << ": ";
-    std::getline(std::cin, response);
+    if (!SafeGetline(response)) {
+      return response;
+    }
     if (!response.empty())
       break;
     std::cout << "Error: " << field_type 

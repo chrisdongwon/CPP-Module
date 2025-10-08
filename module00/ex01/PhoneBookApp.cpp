@@ -93,7 +93,9 @@ void RunPhoneBook( void ) {
 
   while (true) {
     std::cout << "Command (ADD, SEARCH, EXIT): ";
-    std::getline(std::cin, command);
+    if (!SafeGetline(command)) {
+      return;
+    }
     if (command == "ADD") {
       AddContactInteractive(phonebook);
     } else if (command == "SEARCH") {
