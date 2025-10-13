@@ -6,14 +6,14 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/20 07:54:33 by cwon              #+#    #+#              #
-#    Updated: 2025/08/20 14:31:43 by cwon             ###   ########.fr        #
+#    Updated: 2025/10/13 15:32:53 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = harlFilter
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = Harl.hpp
 SRC = Harl.cpp

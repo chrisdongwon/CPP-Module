@@ -6,35 +6,42 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:08:39 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/20 15:23:26 by cwon             ###   ########.fr       */
+/*   Updated: 2025/10/13 15:36:04 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP_
 #define HARL_HPP_
 
-#include <map>
 #include <string>
 
 class Harl {
  public:
   explicit Harl(const char *level);
-  int HarlFilter( void ) const;
+  int HarlFilter( void );
 
  private:
-  enum Level {
+  enum HarlLevel {
     DEBUG,
     INFO,
     WARNING,
-    ERROR
+    ERROR,
+    NONE
   };
 
-  void Debug( void ) const;
-  void Info ( void ) const;
-  void Warning( void ) const;
-  void Error( void ) const;
+  struct Level {
+    const std::string name;
+    enum HarlLevel harl_level;
+  };
 
-  std::map<std::string, Level> levels_;
+  HarlLevel GetLevel(const std::string& level) const;
+
+  void debug( void );
+  void info ( void );
+  void warning( void );
+  void error( void );
+
+  static const Level levels_[4];
   std::string level_;
 };
 
