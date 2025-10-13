@@ -6,14 +6,14 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/16 07:42:56 by cwon              #+#    #+#              #
-#    Updated: 2025/08/20 07:55:07 by cwon             ###   ########.fr        #
+#    Updated: 2025/10/13 13:57:45 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex04
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = Replacer.hpp
 SRC = Replacer.cpp

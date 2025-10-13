@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 07:52:21 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/20 11:45:25 by cwon             ###   ########.fr       */
+/*   Updated: 2025/10/13 14:51:52 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 #include <iostream>
 
-Harl::Harl( void ) {
-  methods_.insert(std::make_pair("DEBUG", &Harl::debug));
-  methods_.insert(std::make_pair("INFO", &Harl::info));
-  methods_.insert(std::make_pair("WARNING", &Harl::warning));
-  methods_.insert(std::make_pair("ERROR", &Harl::error));
-}
+const Harl::Level Harl::levels_[4] = {
+  {"DEBUG", &Harl::debug},
+  {"INFO", &Harl::info},
+  {"WARNING", &Harl::warning},
+  {"ERROR", &Harl::error}
+};
+
+Harl::Harl( void ) {}
 
 void Harl::complain(std::string level) {
-  (this->*methods_.at(level))();
+  for (int i = 0; i < 4; ++i) {
+    if (level == levels_[i].name) {
+      (this->*levels_[i].func)();
+      return;
+    }
+  }
 }
 
 void Harl::debug( void ) {
