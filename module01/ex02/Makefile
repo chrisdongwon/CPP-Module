@@ -6,14 +6,14 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/16 00:40:41 by cwon              #+#    #+#              #
-#    Updated: 2025/08/16 00:48:45 by cwon             ###   ########.fr        #
+#    Updated: 2025/10/13 13:04:54 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 MAIN = main.cpp
 OBJ = $(MAIN:.cpp=.o)

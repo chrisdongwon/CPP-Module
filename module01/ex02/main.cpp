@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 00:41:12 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 18:15:50 by cwon             ###   ########.fr       */
+/*   Updated: 2025/10/13 13:06:11 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main( void ) {
     std::string* stringPTR = &var;
     std::string& stringREF = var;
 
-    std::cout << "The nemory address of the string variable: "
+    std::cout << "The memory address of the string variable: "
               << &var << std::endl;
     std::cout << "The memory address held by stringPTR: "
               << stringPTR << std::endl;
