@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 01:00:34 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 01:10:35 by cwon             ###   ########.fr       */
+/*   Updated: 2025/10/13 13:12:23 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(const std::string& type) : type_(type) {}
 
-const std::string& Weapon::getType() const {
+const std::string& Weapon::getType( void ) const {
   return type_;
 }
 
