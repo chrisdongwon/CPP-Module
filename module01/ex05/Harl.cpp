@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 07:52:21 by cwon              #+#    #+#             */
-/*   Updated: 2025/10/13 14:51:52 by cwon             ###   ########.fr       */
+/*   Updated: 2025/10/14 11:42:17 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ Harl::Harl( void ) {}
 void Harl::complain(std::string level) {
   for (int i = 0; i < 4; ++i) {
     if (level == levels_[i].name) {
-      (this->*levels_[i].func)();
-      return;
+      return (this->*levels_[i].func)();
     }
   }
 }
