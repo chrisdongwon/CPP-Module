@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 12:30:49 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 12:57:42 by cwon             ###   ########.fr       */
+/*   Updated: 2025/10/14 15:53:55 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,13 @@ Fixed Fixed::operator/(const Fixed& other) const {
   return result;
 }
 
+// pre-increment
 Fixed& Fixed::operator++( void ) {
   ++value_;
   return *this;
 }
 
+// post-increment
 Fixed Fixed::operator++(int) {
   Fixed tmp(*this);
 
@@ -103,11 +105,13 @@ Fixed Fixed::operator++(int) {
   return tmp;
 }
 
+// pre-decrement
 Fixed& Fixed::operator--( void ) {
   --value_;
   return *this;
 }
 
+// post-decrement
 Fixed Fixed::operator--(int) {
   Fixed tmp(*this);
 

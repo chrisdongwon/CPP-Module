@@ -6,14 +6,14 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/21 09:59:45 by cwon              #+#    #+#              #
-#    Updated: 2025/08/21 14:44:27 by cwon             ###   ########.fr        #
+#    Updated: 2025/10/14 14:51:12 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex03
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = \
 	Fixed.hpp \

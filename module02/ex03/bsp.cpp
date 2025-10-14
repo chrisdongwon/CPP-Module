@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 13:23:51 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/21 15:52:56 by cwon             ###   ########.fr       */
+/*   Updated: 2025/10/14 16:05:32 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,16 @@ bool bsp(Point const a, Point const b, Point const c, Point const p) {
   Fixed det2 = bc.Determinant(bp);
   Fixed det3 = ca.Determinant(cp);
 
+  // determinant of parallel vectors is zero
+  // if the determinant is zero, then the point lies on the edge
   if (det1 == Fixed(0) || det2 == Fixed(0) || det3 == Fixed(0)) {
     return false; 
   }
 
-  bool all_neg = (det1 < Fixed(0)) || (det2 < Fixed(0)) || (det3 < Fixed(0));
-  bool all_pos = (det1 > Fixed(0)) || (det2 > Fixed(0)) || (det3 > Fixed(0));
+  bool found_neg = (det1 < Fixed(0)) || (det2 < Fixed(0)) || (det3 < Fixed(0));
+  bool found_pos = (det1 > Fixed(0)) || (det2 > Fixed(0)) || (det3 > Fixed(0));
 
-  return !(all_pos && all_neg);
+  // if p is in the triangle, then the determinants must have the same signs
+  // e.g. the cross products will have the same signs
+  return !(found_pos && found_neg);
 }

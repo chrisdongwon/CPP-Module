@@ -6,14 +6,14 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/21 09:59:45 by cwon              #+#    #+#              #
-#    Updated: 2025/08/21 12:58:09 by cwon             ###   ########.fr        #
+#    Updated: 2025/10/14 14:51:08 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = Fixed.hpp
 SRC = Fixed.cpp
