@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 15:25:10 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 15:37:24 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 18:45:36 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class DiamondTrap : public FragTrap, public ScavTrap {
   
   ~DiamondTrap();
 
-  using ScavTrap::attack;
+  void attack(const std::string& target);
   void whoAmI();
 
  private:

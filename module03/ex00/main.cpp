@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 08:06:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/22 09:07:20 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 17:47:24 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int main( void ) {
 
   foo.attack("Bar");
   foo.takeDamage(3);
-  foo.beRepaired(5);
+  foo.beRepaired(10);
 
-  foo.takeDamage(12);
-  foo.attack("Another Robot");
+  for (int i = 0; i < 15; ++i)
+    foo.attack("Another Robot");
+  for (int i = 0; i < 5; ++i)
+    foo.beRepaired(2);
 
   ClapTrap baz("Baz");
   baz = foo;

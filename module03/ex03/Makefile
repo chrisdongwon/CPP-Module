@@ -6,14 +6,14 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/22 08:05:21 by cwon              #+#    #+#              #
-#    Updated: 2025/08/25 15:32:07 by cwon             ###   ########.fr        #
+#    Updated: 2025/12/29 17:33:55 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex03
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = \
 	ClapTrap.hpp \

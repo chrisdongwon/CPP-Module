@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 15:28:06 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 15:41:31 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 18:51:25 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
 
 DiamondTrap::~DiamondTrap() {
   std::cout << "DiamondTrap " << name_ << " destructed!" << std::endl;
+}
+
+void DiamondTrap::attack(const std::string& target) {
+  ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI() {
