@@ -6,13 +6,17 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 09:15:05 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/22 12:44:51 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 19:30:07 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 #include <iostream>
+
+ScavTrap::ScavTrap( void ) : ClapTrap() {
+  std::cout << "ScavTrap constructed!" << std::endl;
+}
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name, 100, 50, 20) {
   std::cout << "ScavTrap " << name_ << " constructed!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 08:07:07 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/22 12:33:42 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 19:22:14 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class ClapTrap {
  public:
+  ClapTrap( void );
   explicit ClapTrap(const std::string& name);
   ClapTrap(const ClapTrap& other);
 

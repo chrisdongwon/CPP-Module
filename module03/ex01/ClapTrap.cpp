@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 08:09:38 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/22 12:36:14 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 19:30:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 #include <iostream>
 
+ClapTrap::ClapTrap( void )
+    : hit_points_(0),
+      energy_points_(0),
+      attack_damage_(0) {
+  std::cout << "ClapTrap constructed!" << std::endl;
+}
+
 ClapTrap::ClapTrap(const std::string& name)
     : name_(name),
       hit_points_(10),
       energy_points_(10),
       attack_damage_(0) {
-  std::cout << "ClapTrap " << name_ << " is constructed!" << std::endl;
+  std::cout << "ClapTrap " << name_ << " constructed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
