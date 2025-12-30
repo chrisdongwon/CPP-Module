@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:32:06 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/02 15:40:53 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 14:07:45 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ class ICharacter;
 
 class AMateria {
  public:
-  AMateria( void );
-  AMateria(std::string const & type);
+  AMateria(std::string const & type = "");
 
   AMateria(const AMateria& other);
 
@@ -37,4 +36,4 @@ class AMateria {
   std::string type_;
 };
 
-#endif
+#endif // AMATERIA_HPP_

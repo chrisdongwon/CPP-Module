@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:46:47 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/03 10:03:35 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 14:08:07 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <iostream>
 
 #include "ICharacter.hpp"
-
-AMateria::AMateria( void ) {}
 
 AMateria::AMateria(std::string const & type) : type_(type) {}
 

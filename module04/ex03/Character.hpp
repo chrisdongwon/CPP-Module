@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:28:06 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/03 08:20:01 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 14:43:05 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 
 class Character : public ICharacter {
  public:
-  Character( void );
-  explicit Character(const std::string& name);
+  explicit Character(const std::string& name = "");
   Character(const Character& other);
 
   Character& operator=(const Character& other);
@@ -32,6 +31,8 @@ class Character : public ICharacter {
   void use(int idx, ICharacter& target);
 
  private:
+  void copy_inventory(const Character& other, int i);
+  
   AMateria* inventory_[4];
   std::string name_;
 };

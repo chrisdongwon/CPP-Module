@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:55:10 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/03 11:48:02 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 14:31:26 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,13 @@ Ice& Ice::operator=(const Ice& other) {
 Ice::~Ice() {}
 
 AMateria* Ice::clone( void ) const {
-  return new Ice(*this);
+  try {
+    return new Ice(*this);
+  }
+  catch (const std::bad_alloc& e) {
+    std::cerr << "Ice failed to clone: " << e.what() << std::endl;
+    return NULL;
+  }
 }
 
 void Ice::use(ICharacter& target) {

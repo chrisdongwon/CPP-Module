@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:11:32 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/03 11:38:57 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 15:42:27 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,17 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-int main( void ) {  
+int main( void ) {
   {
+    std::cout << "===================== Test 1 =================" << std::endl;
     Ice* ice = new Ice();
     Cure* cure = new Cure();
+    AMateria* cloneIce = ice->clone();
+    AMateria* cloneCure = cure->clone();
+    
     IMateriaSource* src = new MateriaSource();
-    src->learnMateria(ice);
-    src->learnMateria(cure);
+    src->learnMateria(cloneIce);
+    src->learnMateria(cloneCure);
 
     ICharacter* me = new Character("me");
 
@@ -41,10 +45,13 @@ int main( void ) {
     delete bob;
     delete me;
     delete src;
+    delete cloneIce;
+    delete cloneCure;
     delete ice;
     delete cure;
   }
   {
+    std::cout << "===================== Test 2 =================" << std::endl;
     Ice* ice = new Ice();
     Cure* cure = new Cure();
     IMateriaSource* src = new MateriaSource();
@@ -86,20 +93,10 @@ int main( void ) {
     alice->unequip(0);
     delete m0;
 
+    std::cout << "---------- Checking for deep copy ---------" << std::endl;
     // Test use to check deep copy
     copyAlice->use(0, *bob);  // should work
     alice->use(0, *bob);      // nothing
-
-    // Polymorphic clone test
-    AMateria* iceMateria = new Ice();
-    AMateria* cureMateria = new Cure();
-    AMateria* cloneIce = iceMateria->clone();
-    AMateria* cloneCure = cureMateria->clone();
-
-    delete iceMateria;
-    delete cureMateria;
-    delete cloneIce;
-    delete cloneCure;
 
     // Clean up all objects
     delete alice;       // deletes m2, m3, m4

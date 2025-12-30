@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:16:26 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/03 08:07:50 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 14:30:56 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,13 @@ Cure& Cure::operator=(const Cure& other) {
 Cure::~Cure() {}
 
 AMateria* Cure::clone( void ) const {
-  return new Cure(*this);
+  try {
+    return new Cure(*this);
+  }
+  catch (const std::bad_alloc& e) {
+    std::cerr << "Cure failed to clone: " << e.what() << std::endl;
+    return NULL;
+  }
 }
 
 void Cure::use(ICharacter& target) {
