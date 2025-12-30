@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:12:42 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 16:45:45 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:01:03 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 
-Animal::Animal( void ) : type_("") {
+Animal::Animal(std::string type)
+    : type_(type) {
   std::cout << "Animal constructed" << std::endl;
 }
 
@@ -40,8 +41,4 @@ std::string Animal::getType( void ) const {
 
 void Animal::makeSound( void ) const {
   std::cout << "Animal makes sound" << std::endl;
-}
-
-Animal::Animal(std::string type) : type_(type) {
-  std::cout << "Animal constructed" << std::endl;
 }
