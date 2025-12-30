@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 15:28:06 by cwon              #+#    #+#             */
-/*   Updated: 2025/12/29 18:51:25 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 12:39:25 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,34 @@
 
 DiamondTrap::DiamondTrap(const std::string& name)
     : ClapTrap(name + "_clap_name"),
-      FragTrap(name),
-      ScavTrap(name),
+      ScavTrap(),
+      FragTrap(),
       name_(name) {
-  hit_points_ = FragTrap::hit_points_;
-  energy_points_ = ScavTrap::energy_points_;
-  attack_damage_ = FragTrap::attack_damage_;
+  hit_points_ = FragTrap::kHitPoints;
+  energy_points_ = ScavTrap::kEnergyPoints;
+  attack_damage_ = FragTrap::kAttackDamage;
   std::cout << "DiamondTrap " << name_ << " constructed!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
     : ClapTrap(other),
-      FragTrap(other),
-      ScavTrap(other),
-      name_(other.name_) {
-  std::cout << "DiamondTrap " << name_ << "copied!" << std::endl;
+      ScavTrap(),
+      FragTrap() {
+  name_ = other.name_;
+  hit_points_ = other.hit_points_;
+  energy_points_ = other.energy_points_;
+  attack_damage_ = other.attack_damage_;
+  std::cout << "DiamondTrap " << name_ << " copied!" << std::endl;
 }
 
-DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
+{
   if (this != &other) {
     ClapTrap::operator=(other);
-    FragTrap::operator=(other);
-    ScavTrap::operator=(other);
     name_ = other.name_;
+    hit_points_ = other.hit_points_;
+    energy_points_ = other.energy_points_;
+    attack_damage_ = other.attack_damage_;
   }
   return *this;
 }

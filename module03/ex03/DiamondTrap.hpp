@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 15:25:10 by cwon              #+#    #+#             */
-/*   Updated: 2025/12/29 18:45:36 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 21:36:29 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
  public:
-  explicit DiamondTrap(const std::string& name);
+  explicit DiamondTrap(const std::string& name = "DiamondTrap");
   DiamondTrap(const DiamondTrap& other);
 
   DiamondTrap& operator=(const DiamondTrap& other);

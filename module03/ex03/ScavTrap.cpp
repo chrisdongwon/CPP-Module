@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 09:15:05 by cwon              #+#    #+#             */
-/*   Updated: 2025/12/29 19:32:43 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 12:40:23 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap( void ) : ClapTrap() {
-  std::cout << "ScavTrap constructed!" << std::endl;
-}
-
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name, 100, 50, 20) {
+ScavTrap::ScavTrap(const std::string& name)
+    : ClapTrap(name) {
+  hit_points_ = kHitPoints;
+  energy_points_ = kEnergyPoints;
+  attack_damage_ = kAttackDamage;
   std::cout << "ScavTrap " << name_ << " constructed!" << std::endl;
 }
 

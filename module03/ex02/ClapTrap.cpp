@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 08:09:38 by cwon              #+#    #+#             */
-/*   Updated: 2025/12/29 19:27:06 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 21:08:18 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,17 @@
 
 #include <iostream>
 
-ClapTrap::ClapTrap( void )
-    : hit_points_(0),
-      energy_points_(0),
-      attack_damage_(0) {
-  std::cout << "ClapTrap constructed!" << std::endl;
-}
-
 ClapTrap::ClapTrap(const std::string& name)
     : name_(name),
       hit_points_(10),
       energy_points_(10),
       attack_damage_(0) {
-  std::cout << "ClapTrap " << name_ << " is constructed!" << std::endl;
+  std::cout << "ClapTrap " << name_ << " constructed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
   *this = other;
-  std::cout << "ClapTrap " << name_ << " is copied!" << std::endl;
+  std::cout << "ClapTrap " << name_ << " copied!" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
@@ -45,7 +38,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 }
 
 ClapTrap::~ClapTrap() {
-  std::cout << "ClapTrap " << name_ << " is destructed!" << std::endl;
+  std::cout << "ClapTrap " << name_ << " destructed!" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {
@@ -85,15 +78,4 @@ void ClapTrap::beRepaired(unsigned int amount) {
               << " hit points! Current hit points: " << hit_points_
               << std::endl;
   }
-}
-
-ClapTrap::ClapTrap(const std::string& name,
-                   int hit_points,
-                   int energy_points,
-                   int attack_damage)
-    : name_(name),
-      hit_points_(hit_points),
-      energy_points_(energy_points),
-      attack_damage_(attack_damage) {
-  std::cout << "ClapTrap " << name_ << " is constructed!" << std::endl;
 }

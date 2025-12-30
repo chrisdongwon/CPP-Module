@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 09:15:05 by cwon              #+#    #+#             */
-/*   Updated: 2025/12/29 19:27:50 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 21:09:47 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 #include <iostream>
 
-FragTrap::FragTrap( void ) : ClapTrap() {
-  std::cout << "FragTrap constructed!" << std::endl;
-}
-
-FragTrap::FragTrap(const std::string& name) : ClapTrap(name, 100, 100, 30) {
+FragTrap::FragTrap(const std::string& name)
+    : ClapTrap(name) {
+  hit_points_ = 100;
+  energy_points_ = 100;
+  attack_damage_ = 30;
   std::cout << "FragTrap " << name_ << " constructed!" << std::endl;
 }
 

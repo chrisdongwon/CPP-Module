@@ -6,20 +6,13 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 08:09:38 by cwon              #+#    #+#             */
-/*   Updated: 2025/12/29 19:30:16 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/29 20:34:13 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 #include <iostream>
-
-ClapTrap::ClapTrap( void )
-    : hit_points_(0),
-      energy_points_(0),
-      attack_damage_(0) {
-  std::cout << "ClapTrap constructed!" << std::endl;
-}
 
 ClapTrap::ClapTrap(const std::string& name)
     : name_(name),
