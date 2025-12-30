@@ -6,17 +6,17 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:40:47 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/26 14:40:36 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:52:36 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP_
 #define CAT_HPP_
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
  public:
   Cat( void );
   Cat(const Cat& other);
@@ -29,6 +29,8 @@ class Cat : public Animal {
   void makeSound( void ) const;
 
  private:
+  void  copy_brain(const Cat& other);
+
   Brain *brain_;
 };
 

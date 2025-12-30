@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:12:42 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/26 15:20:20 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:51:33 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 #include <iostream>
 
-Animal::Animal( void ) : type_("") {
-  std::cout << "Animal constructed" << std::endl;
+AAnimal::AAnimal(std::string type)
+    : type_(type) {
+  std::cout << "AAnimal constructed" << std::endl;
 }
 
-Animal::Animal(const Animal& other) {
+AAnimal::AAnimal(const AAnimal& other) {
   *this = other;
-  std::cout << "Animal copied" << std::endl;
+  std::cout << "AAnimal copied" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& other) {
+AAnimal& AAnimal::operator=(const AAnimal& other) {
   if (this != &other) {
     type_ = other.type_;
   }
   return *this;
 }
 
-Animal::~Animal() {
-  std::cout << "Animal destructed" << std::endl;
+AAnimal::~AAnimal() {
+  std::cout << "AAnimal destructed" << std::endl;
 }
 
-std::string Animal::getType( void ) const {
+std::string AAnimal::getType( void ) const {
   return type_;
-}
-
-Animal::Animal(std::string type) : type_(type) {
-  std::cout << "Animal constructed" << std::endl;
 }

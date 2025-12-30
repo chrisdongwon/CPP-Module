@@ -20,15 +20,16 @@
 
 int main( void ) {
   {
-    const Animal* i = new Dog();
-    const Animal* j = new Cat();
+    std::cout << "=== Brain Leak Check ===" << std::endl;
+    const AAnimal* i = new Dog();
+    const AAnimal* j = new Cat();
 
     delete j;
     delete i;
   }
   {
-    std::cout << "=== Creating Animals ===" << std::endl;
-    Animal* animals[ARRAY_SIZE];
+    std::cout << "\n=== Creating Animals ===" << std::endl;
+    AAnimal* animals[ARRAY_SIZE];
 
     for (int i = 0; i < ARRAY_SIZE; i++) {
     if (i < ARRAY_SIZE / 2) {
@@ -57,12 +58,16 @@ int main( void ) {
 
     std::cout << "Original Dog idea[0]: " << originalDog.brain()->ideas(0) << std::endl;
     std::cout << "Copied Dog ideas[0]: "   << copiedDog.brain()->ideas(0) << std::endl;
+    std::cout << "Original Dog idea[1]: " << originalDog.brain()->ideas(1) << std::endl;
+    std::cout << "Copied Dog ideas[1]: "   << copiedDog.brain()->ideas(1) << std::endl;
 
     // Change original's brain to verify deep copy
     originalDog.brain()->set_ideas(0, "Eat food!");
     std::cout << "After change:" << std::endl;
     std::cout << "Original Dog ideas[0]: " << originalDog.brain()->ideas(0) << std::endl;
     std::cout << "Copied Dog ideas[0]: "   << copiedDog.brain()->ideas(0) << std::endl;
+    std::cout << "Original Dog idea[1]: " << originalDog.brain()->ideas(1) << std::endl;
+    std::cout << "Copied Dog ideas[1]: "   << copiedDog.brain()->ideas(1) << std::endl;
 
     std::cout << "\n=== Deep Copy Test (Cat) ===" << std::endl;
     Cat originalCat;
@@ -79,7 +84,6 @@ int main( void ) {
     std::cout << "After change:" << std::endl;
     std::cout << "Original Cat ideas[0]: " << originalCat.brain()->ideas(0) << std::endl;
     std::cout << "Assigned Cat ideas[0]: " << assignedCat.brain()->ideas(0) << std::endl;
-
   }
   return 0;
 }

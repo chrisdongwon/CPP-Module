@@ -6,7 +6,7 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/22 08:05:21 by cwon              #+#    #+#              #
-#    Updated: 2025/12/30 13:13:01 by cwon             ###   ########.fr        #
+#    Updated: 2025/12/30 13:53:41 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = \
-	Animal.hpp \
+	AAnimal.hpp \
 	Brain.hpp \
 	Cat.hpp \
 	Dog.hpp
 SRC = \
-	Animal.cpp \
+	AAnimal.cpp \
 	Brain.cpp \
 	Cat.cpp \
 	Dog.cpp

@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:25:52 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/26 14:45:45 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:52:57 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-Dog::Dog( void ) : Animal("Dog") {
+Dog::Dog( void ) : AAnimal("Dog") {
   try {
     brain_ = new Brain();
   } catch (const std::bad_alloc& e) {
@@ -25,34 +25,18 @@ Dog::Dog( void ) : Animal("Dog") {
 }
 
 Dog::Dog(const Dog& other)
-    : Animal(other),
+    : AAnimal(other),
       brain_(NULL) {
-  if (other.brain_) {
-    try {
-      brain_ = new Brain(*other.brain_);
-    } catch (const std::bad_alloc& e) {
-      std::cerr << "Dog failed to allocate Brain: " << e.what() << std::endl;
-      brain_ = NULL;
-    }
-  }
+  copy_brain(other);
   std::cout << "Dog copied" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other) {
   if (this != &other) {
-    Animal::operator=(other);
-    
+    AAnimal::operator=(other);
     delete brain_;
     brain_ = NULL;
-    
-    if (other.brain_) {
-      try {
-        brain_ = new Brain(*other.brain_);
-      } catch (const std::bad_alloc& e) {
-        std::cerr << "Dog failed to allocate Brain: " << e.what() << std::endl;
-        brain_ = NULL;
-      }
-    }
+    copy_brain(other);
   }
   return *this;
 }
@@ -68,4 +52,15 @@ Brain* Dog::brain( void ) const {
 
 void Dog::makeSound( void ) const {
   std::cout << "Dog barks" << std::endl;
+}
+
+void Dog::copy_brain(const Dog& other) {
+  if (other.brain_) {
+    try {
+      brain_ = new Brain(*other.brain_);
+    } catch (const std::bad_alloc& e) {
+      std::cerr << "Dog failed to allocate Brain: " << e.what() << std::endl;
+      brain_ = NULL;
+    }
+  }
 }
