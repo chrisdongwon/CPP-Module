@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:54:54 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 16:55:35 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:04:49 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class WrongAnimal {
  public:
-  WrongAnimal( void );
+  WrongAnimal(std::string type = "");
   WrongAnimal(const WrongAnimal& other);
 
   WrongAnimal& operator=(const WrongAnimal& other);
@@ -28,8 +28,6 @@ class WrongAnimal {
   void makeSound( void ) const;
 
  protected:
-  WrongAnimal(std::string type);
-  
   std::string type_;
 };
 

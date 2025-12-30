@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:39:48 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 16:41:18 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:04:06 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 
-Cat::Cat( void ) : Animal("Cat") {
+Cat::Cat( void )
+    : Animal("Cat") {
   std::cout << "Cat constructed" << std::endl;
 }
 

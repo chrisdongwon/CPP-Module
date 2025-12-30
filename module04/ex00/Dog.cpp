@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:25:52 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 16:39:29 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:04:25 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 
-Dog::Dog( void ) : Animal("Dog") {
+Dog::Dog( void )
+    : Animal("Dog") {
   std::cout << "Dog constructed" << std::endl;
 }
 

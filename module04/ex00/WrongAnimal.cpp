@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:55:53 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/25 16:56:25 by cwon             ###   ########.fr       */
+/*   Updated: 2025/12/30 13:05:04 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 
-WrongAnimal::WrongAnimal( void ) : type_("") {
+WrongAnimal::WrongAnimal(std::string type)
+    : type_(type) {
   std::cout << "WrongAnimal constructed" << std::endl;
 }
 
@@ -40,8 +41,4 @@ std::string WrongAnimal::getType( void ) const {
 
 void WrongAnimal::makeSound( void ) const {
   std::cout << "WrongAnimal makes wrong sound" << std::endl;
-}
-
-WrongAnimal::WrongAnimal(std::string type) : type_(type) {
-  std::cout << "WrongAnimal constructed" << std::endl;
 }
