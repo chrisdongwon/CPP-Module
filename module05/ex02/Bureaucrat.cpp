@@ -6,11 +6,13 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 12:56:13 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 13:44:50 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/18 14:11:57 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade)
     : name_(name),
@@ -62,4 +64,14 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
   os << b.getName() << ", bureaucrat grade " << b.getGrade();
   return os;
+}
+
+void Bureaucrat::signForm(Form& form) {
+  try {
+    form.beSigned(*this);
+    std::cout << getName() << " signed " << form.getName() << std::endl;
+  } catch (std::exception& e) {
+    std::cout << getName() << " couldn’t sign " << form.getName()
+              << " because " << e.what() << std::endl;
+  }
 }

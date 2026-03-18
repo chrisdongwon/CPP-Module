@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 12:45:13 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 13:43:29 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/18 14:10:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <exception>
 #include <iostream>
+
+class Form;
 
 class Bureaucrat {
   public:
@@ -38,6 +40,8 @@ class Bureaucrat {
       public:
         const char* what() const throw();
     };
+
+    void signForm(Form& form);
   
   private:
     const std::string name_;
