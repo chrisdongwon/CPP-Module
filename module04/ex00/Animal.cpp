@@ -14,8 +14,7 @@
 
 #include <iostream>
 
-Animal::Animal(std::string type)
-    : type_(type) {
+Animal::Animal(std::string type) : type_(type) {
   std::cout << "Animal constructed" << std::endl;
 }
 
@@ -35,10 +34,10 @@ Animal::~Animal() {
   std::cout << "Animal destructed" << std::endl;
 }
 
-std::string Animal::getType( void ) const {
+std::string Animal::getType(void) const {
   return type_;
 }
 
-void Animal::makeSound( void ) const {
+void Animal::makeSound(void) const {
   std::cout << "Animal makes sound" << std::endl;
 }

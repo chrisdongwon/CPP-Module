@@ -16,7 +16,7 @@
 
 #include "ICharacter.hpp"
 
-Ice::Ice( void ) : AMateria("ice") {}
+Ice::Ice(void) : AMateria("ice") {}
 
 Ice::Ice(const Ice& other) : AMateria(other) {}
 
@@ -29,11 +29,10 @@ Ice& Ice::operator=(const Ice& other) {
 
 Ice::~Ice() {}
 
-AMateria* Ice::clone( void ) const {
+AMateria* Ice::clone(void) const {
   try {
     return new Ice(*this);
-  }
-  catch (const std::bad_alloc& e) {
+  } catch (const std::bad_alloc& e) {
     std::cerr << "Ice failed to clone: " << e.what() << std::endl;
     return NULL;
   }

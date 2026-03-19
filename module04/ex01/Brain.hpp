@@ -17,7 +17,7 @@
 
 class Brain {
  public:
-  Brain( void );
+  Brain(void);
   Brain(const Brain& other);
 
   Brain& operator=(const Brain& other);
@@ -31,4 +31,4 @@ class Brain {
   std::string ideas_[100];
 };
 
-#endif // BRAIN_HPP_
+#endif  // BRAIN_HPP_

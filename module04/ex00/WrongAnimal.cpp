@@ -14,8 +14,7 @@
 
 #include <iostream>
 
-WrongAnimal::WrongAnimal(std::string type)
-    : type_(type) {
+WrongAnimal::WrongAnimal(std::string type) : type_(type) {
   std::cout << "WrongAnimal constructed" << std::endl;
 }
 
@@ -35,10 +34,10 @@ WrongAnimal::~WrongAnimal() {
   std::cout << "WrongAnimal destructed" << std::endl;
 }
 
-std::string WrongAnimal::getType( void ) const {
+std::string WrongAnimal::getType(void) const {
   return type_;
 }
 
-void WrongAnimal::makeSound( void ) const {
+void WrongAnimal::makeSound(void) const {
   std::cout << "WrongAnimal makes wrong sound" << std::endl;
 }

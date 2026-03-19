@@ -17,15 +17,15 @@
 
 class Ice : public AMateria {
  public:
-  Ice( void );
+  Ice(void);
   Ice(const Ice& other);
 
   Ice& operator=(const Ice& other);
-  
+
   ~Ice();
-  
+
   AMateria* clone() const;
   void use(ICharacter& target);
 };
 
-#endif // ICE_HPP_
+#endif  // ICE_HPP_

@@ -24,11 +24,11 @@ class AAnimal {
 
   virtual ~AAnimal();
 
-  std::string getType( void ) const;
-  virtual void makeSound( void ) const = 0;
+  std::string getType(void) const;
+  virtual void makeSound(void) const = 0;
 
  protected:
   std::string type_;
 };
 
-#endif // AANIMAL_HPP_
+#endif  // AANIMAL_HPP_

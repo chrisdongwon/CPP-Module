@@ -18,20 +18,20 @@
 
 class Cat : public AAnimal {
  public:
-  Cat( void );
+  Cat(void);
   Cat(const Cat& other);
 
   Cat& operator=(const Cat& other);
 
   ~Cat();
 
-  Brain* brain( void ) const;
-  void makeSound( void ) const;
+  Brain* brain(void) const;
+  void makeSound(void) const;
 
  private:
-  void  copy_brain(const Cat& other);
+  void copy_brain(const Cat& other);
 
-  Brain *brain_;
+  Brain* brain_;
 };
 
-#endif // CAT_HPP_
+#endif  // CAT_HPP_

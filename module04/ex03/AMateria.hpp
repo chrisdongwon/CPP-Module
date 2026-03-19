@@ -19,7 +19,7 @@ class ICharacter;
 
 class AMateria {
  public:
-  AMateria(std::string const & type = "");
+  AMateria(std::string const& type = "");
 
   AMateria(const AMateria& other);
 
@@ -27,7 +27,7 @@ class AMateria {
 
   virtual ~AMateria();
 
-  std::string const & getType() const;
+  std::string const& getType() const;
 
   virtual AMateria* clone() const = 0;
   virtual void use(ICharacter& target);
@@ -36,4 +36,4 @@ class AMateria {
   std::string type_;
 };
 
-#endif // AMATERIA_HPP_
+#endif  // AMATERIA_HPP_

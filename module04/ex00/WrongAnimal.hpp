@@ -24,11 +24,11 @@ class WrongAnimal {
 
   ~WrongAnimal();
 
-  std::string getType( void ) const;
-  void makeSound( void ) const;
+  std::string getType(void) const;
+  void makeSound(void) const;
 
  protected:
   std::string type_;
 };
 
-#endif // WRONGANIMAL_HPP_
+#endif  // WRONGANIMAL_HPP_

@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-Cat::Cat( void ) : AAnimal("Cat") {
+Cat::Cat(void) : AAnimal("Cat") {
   try {
     brain_ = new Brain();
   } catch (const std::bad_alloc& e) {
@@ -24,9 +24,7 @@ Cat::Cat( void ) : AAnimal("Cat") {
   std::cout << "Cat constructed" << std::endl;
 }
 
-Cat::Cat(const Cat& other)
-    : AAnimal(other),
-      brain_(NULL) {
+Cat::Cat(const Cat& other) : AAnimal(other), brain_(NULL) {
   copy_brain(other);
   std::cout << "Cat copied" << std::endl;
 }
@@ -46,11 +44,11 @@ Cat::~Cat() {
   std::cout << "Cat destructed" << std::endl;
 }
 
-Brain* Cat::brain( void ) const {
+Brain* Cat::brain(void) const {
   return brain_;
 }
 
-void Cat::makeSound( void ) const {
+void Cat::makeSound(void) const {
   std::cout << "Cat meows" << std::endl;
 }
 

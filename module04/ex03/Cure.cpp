@@ -16,7 +16,7 @@
 
 #include "ICharacter.hpp"
 
-Cure::Cure( void ) : AMateria("cure") {}
+Cure::Cure(void) : AMateria("cure") {}
 
 Cure::Cure(const Cure& other) : AMateria(other) {}
 
@@ -29,17 +29,15 @@ Cure& Cure::operator=(const Cure& other) {
 
 Cure::~Cure() {}
 
-AMateria* Cure::clone( void ) const {
+AMateria* Cure::clone(void) const {
   try {
     return new Cure(*this);
-  }
-  catch (const std::bad_alloc& e) {
+  } catch (const std::bad_alloc& e) {
     std::cerr << "Cure failed to clone: " << e.what() << std::endl;
     return NULL;
   }
 }
 
 void Cure::use(ICharacter& target) {
-  std::cout << "* heals " << target.getName() << "’s wounds *"
-            << std::endl;
+  std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

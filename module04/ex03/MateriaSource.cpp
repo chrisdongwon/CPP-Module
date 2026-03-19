@@ -14,7 +14,7 @@
 
 #include "AMateria.hpp"
 
-MateriaSource::MateriaSource( void ) {
+MateriaSource::MateriaSource(void) {
   for (int i = 0; i < 4; ++i) {
     storage_[i] = NULL;
   }

@@ -14,8 +14,7 @@
 
 #include <iostream>
 
-Dog::Dog( void )
-    : Animal("Dog") {
+Dog::Dog(void) : Animal("Dog") {
   std::cout << "Dog constructed" << std::endl;
 }
 
@@ -34,6 +33,6 @@ Dog::~Dog() {
   std::cout << "Dog destructed" << std::endl;
 }
 
-void Dog::makeSound( void ) const {
+void Dog::makeSound(void) const {
   std::cout << "Dog barks" << std::endl;
 }

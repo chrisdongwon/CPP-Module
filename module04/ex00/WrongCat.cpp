@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-WrongCat::WrongCat( void ) : WrongAnimal("WrongCat") {
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat") {
   std::cout << "WrongCat constructed" << std::endl;
 }
 
@@ -33,6 +33,6 @@ WrongCat::~WrongCat() {
   std::cout << "WrongCat destructed" << std::endl;
 }
 
-void WrongCat::makeSound( void ) const {
+void WrongCat::makeSound(void) const {
   std::cout << "WrongCat meows" << std::endl;
 }

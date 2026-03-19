@@ -17,14 +17,14 @@
 
 class Dog : public Animal {
  public:
-  Dog( void );
+  Dog(void);
   Dog(const Dog& other);
 
   Dog& operator=(const Dog& other);
 
   ~Dog();
 
-  void makeSound( void ) const;
+  void makeSound(void) const;
 };
 
-#endif // DOG_HPP_
+#endif  // DOG_HPP_

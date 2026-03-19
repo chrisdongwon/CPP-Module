@@ -13,18 +13,18 @@
 #include <iostream>
 
 #include "Character.hpp"
-#include "MateriaSource.hpp"
-#include "Ice.hpp"
 #include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
-int main( void ) {
+int main(void) {
   {
     std::cout << "===================== Test 1 =================" << std::endl;
     Ice* ice = new Ice();
     Cure* cure = new Cure();
     AMateria* cloneIce = ice->clone();
     AMateria* cloneCure = cure->clone();
-    
+
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(cloneIce);
     src->learnMateria(cloneCure);
@@ -55,7 +55,7 @@ int main( void ) {
     Ice* ice = new Ice();
     Cure* cure = new Cure();
     IMateriaSource* src = new MateriaSource();
-    
+
     src->learnMateria(ice);
     src->learnMateria(cure);
 
@@ -83,7 +83,7 @@ int main( void ) {
     delete m1;
 
     // Equip a new materia in slot 1
-    AMateria* m4 = src->createMateria("cure"); // now owned by Alice
+    AMateria* m4 = src->createMateria("cure");  // now owned by Alice
     alice->equip(m4);
 
     // Deep copy test
@@ -99,8 +99,8 @@ int main( void ) {
     alice->use(0, *bob);      // nothing
 
     // Clean up all objects
-    delete alice;       // deletes m2, m3, m4
-    delete copyAlice;   // deletes its own cloned materias
+    delete alice;      // deletes m2, m3, m4
+    delete copyAlice;  // deletes its own cloned materias
     delete bob;
     delete src;
 

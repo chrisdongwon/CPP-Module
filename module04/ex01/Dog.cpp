@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-Dog::Dog( void ) : Animal("Dog") {
+Dog::Dog(void) : Animal("Dog") {
   try {
     brain_ = new Brain();
   } catch (const std::bad_alloc& e) {
@@ -24,9 +24,7 @@ Dog::Dog( void ) : Animal("Dog") {
   std::cout << "Dog constructed" << std::endl;
 }
 
-Dog::Dog(const Dog& other)
-    : Animal(other),
-      brain_(NULL) {
+Dog::Dog(const Dog& other) : Animal(other), brain_(NULL) {
   copy_brain(other);
   std::cout << "Dog copied" << std::endl;
 }
@@ -46,11 +44,11 @@ Dog::~Dog() {
   std::cout << "Dog destructed" << std::endl;
 }
 
-Brain* Dog::brain( void ) const {
+Brain* Dog::brain(void) const {
   return brain_;
 }
 
-void Dog::makeSound( void ) const {
+void Dog::makeSound(void) const {
   std::cout << "Dog barks" << std::endl;
 }
 

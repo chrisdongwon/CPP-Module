@@ -14,8 +14,7 @@
 
 #include "AMateria.hpp"
 
-Character::Character(const std::string& name)
-    : name_(name) {
+Character::Character(const std::string& name) : name_(name) {
   for (int i = 0; i < 4; ++i) {
     inventory_[i] = NULL;
   }
@@ -44,7 +43,7 @@ Character::~Character() {
   }
 }
 
-const std::string& Character::getName( void ) const {
+const std::string& Character::getName(void) const {
   return name_;
 }
 

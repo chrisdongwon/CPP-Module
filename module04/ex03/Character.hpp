@@ -21,10 +21,10 @@ class Character : public ICharacter {
   Character(const Character& other);
 
   Character& operator=(const Character& other);
-  
+
   ~Character();
 
-  const std::string& getName( void ) const;
+  const std::string& getName(void) const;
 
   void equip(AMateria* m);
   void unequip(int idx);
@@ -32,7 +32,7 @@ class Character : public ICharacter {
 
  private:
   void copy_inventory(const Character& other, int i);
-  
+
   AMateria* inventory_[4];
   std::string name_;
 };

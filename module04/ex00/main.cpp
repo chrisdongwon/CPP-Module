@@ -16,7 +16,7 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-int main( void ) {
+int main(void) {
   {
     std::cout << "------------Animal Class-------------" << std::endl;
     const Animal* meta = new Animal();
@@ -25,27 +25,27 @@ int main( void ) {
 
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
+    i->makeSound();  // will output the cat sound!
     j->makeSound();
     meta->makeSound();
 
-    delete(meta);
-    delete(j);
-    delete(i);
+    delete (meta);
+    delete (j);
+    delete (i);
   }
-  
+
   {
     std::cout << "------------WrongAnimal Class-------------" << std::endl;
     const WrongAnimal* meta = new WrongAnimal();
     const WrongAnimal* i = new WrongCat();
 
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
+    i->makeSound();  // will output the cat sound!
     meta->makeSound();
 
-    delete(meta);
-    delete(i);
+    delete (meta);
+    delete (i);
   }
-  
+
   return 0;
 }

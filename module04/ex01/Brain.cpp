@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-Brain::Brain( void ) {
+Brain::Brain(void) {
   std::cout << "Brain constructed" << std::endl;
 }
 

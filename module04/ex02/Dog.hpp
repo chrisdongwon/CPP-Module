@@ -18,20 +18,20 @@
 
 class Dog : public AAnimal {
  public:
-  Dog( void );
+  Dog(void);
   Dog(const Dog& other);
 
   Dog& operator=(const Dog& other);
 
   ~Dog();
 
-  Brain* brain( void ) const;
-  void makeSound( void ) const;
+  Brain* brain(void) const;
+  void makeSound(void) const;
 
  private:
-  void  copy_brain(const Dog& other);
- 
+  void copy_brain(const Dog& other);
+
   Brain* brain_;
 };
 
-#endif // DOG_HPP_
+#endif  // DOG_HPP_

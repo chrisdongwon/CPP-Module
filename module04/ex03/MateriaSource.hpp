@@ -17,7 +17,7 @@
 
 class MateriaSource : public IMateriaSource {
  public:
-  MateriaSource( void );
+  MateriaSource(void);
   MateriaSource(const MateriaSource& other);
 
   MateriaSource& operator=(const MateriaSource& other);
@@ -31,4 +31,4 @@ class MateriaSource : public IMateriaSource {
   AMateria* storage_[4];
 };
 
-#endif // MATERIASOURCE_HPP_
+#endif  // MATERIASOURCE_HPP_

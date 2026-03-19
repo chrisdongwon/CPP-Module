@@ -14,8 +14,7 @@
 
 #include <iostream>
 
-AAnimal::AAnimal(std::string type)
-    : type_(type) {
+AAnimal::AAnimal(std::string type) : type_(type) {
   std::cout << "AAnimal constructed" << std::endl;
 }
 
@@ -35,6 +34,6 @@ AAnimal::~AAnimal() {
   std::cout << "AAnimal destructed" << std::endl;
 }
 
-std::string AAnimal::getType( void ) const {
+std::string AAnimal::getType(void) const {
   return type_;
 }

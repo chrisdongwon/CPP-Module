@@ -16,7 +16,7 @@
 
 #include "ICharacter.hpp"
 
-AMateria::AMateria(std::string const & type) : type_(type) {}
+AMateria::AMateria(std::string const& type) : type_(type) {}
 
 AMateria::AMateria(const AMateria& other) : type_(other.type_) {}
 
@@ -29,7 +29,7 @@ AMateria& AMateria::operator=(const AMateria& other) {
 
 AMateria::~AMateria() {}
 
-std::string const & AMateria::getType() const {
+std::string const& AMateria::getType() const {
   return type_;
 }
 
