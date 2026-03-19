@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 10:57:08 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 11:35:23 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 11:31:24 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 11:34:02 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP_
-#define SHRUBBERYCREATIONFORM_HPP_
+#ifndef ROBOTOMYREQUESTFORM_HPP_
+#define ROBOTOMYREQUESTFORM_HPP_
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class RobotomyRequestForm : public AForm {
  public:
-  ShrubberyCreationForm(const std::string& target);
+  RobotomyRequestForm(const std::string& target);
   void executeAction() const;
 
  private:
   std::string target_;
 };
 
-#endif  // SHRUBBERYCREATIONFORM_HPP_
+#endif  // ROBOTOMYREQUESTFORM_HPP_

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 10:57:08 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 11:35:23 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 11:42:34 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 11:43:50 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP_
-#define SHRUBBERYCREATIONFORM_HPP_
+#include "PresidentialPardonForm.hpp"
 
-#include "AForm.hpp"
+#include <iostream>
 
-class ShrubberyCreationForm : public AForm {
- public:
-  ShrubberyCreationForm(const std::string& target);
-  void executeAction() const;
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
+    : AForm("Pardon", 25, 5), target_(target) {}
 
- private:
-  std::string target_;
-};
-
-#endif  // SHRUBBERYCREATIONFORM_HPP_
+void PresidentialPardonForm::executeAction() const {
+  std::cout << target_ << " has been pardoned by Zaphod Beeblebrox\n";
+}

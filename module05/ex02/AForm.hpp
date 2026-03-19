@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 10:52:52 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 10:54:33 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:23:20 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ class AForm {
   };
 
  private:
-  bool isSigned;
-  const int gradeToExecute;
-  const int gradeToSign;
-  const std::string name;
+  bool isSigned_;
+  const int gradeToExecute_;
+  const int gradeToSign_;
+  const std::string name_;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& f);

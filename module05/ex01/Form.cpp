@@ -39,13 +39,21 @@ Form& Form::operator=(const Form& other) {
 
 Form::~Form() {}
 
-bool Form::getIsSigned() const { return isSigned_; }
+bool Form::getIsSigned() const {
+  return isSigned_;
+}
 
-const std::string& Form::getName() const { return name_; }
+const std::string& Form::getName() const {
+  return name_;
+}
 
-int Form::getGradeToExecute() const { return gradeToExecute_; }
+int Form::getGradeToExecute() const {
+  return gradeToExecute_;
+}
 
-int Form::getGradeToSign() const { return gradeToSign_; }
+int Form::getGradeToSign() const {
+  return gradeToSign_;
+}
 
 void Form::beSigned(const Bureaucrat& b) {
   if (b.getGrade() > gradeToSign_)

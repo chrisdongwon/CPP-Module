@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 10:55:35 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 10:56:10 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:53:21 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Bureaucrat.hpp"
 
 AForm::AForm(const std::string& name, int s, int e)
-    : name(name), isSigned(false), gradeToSign(s), gradeToExecute(e) {
+    : isSigned_(false), gradeToExecute_(e), gradeToSign_(s), name_(name) {
   if (s < 1 || e < 1)
     throw GradeTooHighException();
   if (s > 150 || e > 150)
@@ -24,16 +24,32 @@ AForm::AForm(const std::string& name, int s, int e)
 
 AForm::~AForm() {}
 
+bool AForm::getIsSigned() const {
+  return isSigned_;
+}
+
+const std::string& AForm::getName() const {
+  return name_;
+}
+
+int AForm::getGradeToExecute() const {
+  return gradeToExecute_;
+}
+
+int AForm::getGradeToSign() const {
+  return gradeToSign_;
+}
+
 void AForm::beSigned(const Bureaucrat& b) {
-  if (b.getGrade() > gradeToSign)
+  if (b.getGrade() > gradeToSign_)
     throw GradeTooLowException();
-  isSigned = true;
+  isSigned_ = true;
 }
 
 void AForm::execute(Bureaucrat const& executor) const {
-  if (!isSigned)
+  if (!isSigned_)
     throw FormNotSignedException();
-  if (executor.getGrade() > gradeToExecute)
+  if (executor.getGrade() > gradeToExecute_)
     throw GradeTooLowException();
   executeAction();
 }

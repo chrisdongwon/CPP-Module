@@ -6,13 +6,13 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 12:56:13 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 10:47:10 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:46:08 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade)
     : name_(name), grade_(grade) {
@@ -64,12 +64,22 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
   return os;
 }
 
-void Bureaucrat::signForm(Form& form) {
+void Bureaucrat::signForm(AForm& form) {
   try {
     form.beSigned(*this);
     std::cout << getName() << " signed " << form.getName() << std::endl;
   } catch (std::exception& e) {
     std::cout << getName() << " couldn’t sign " << form.getName() << " because "
               << e.what() << std::endl;
+  }
+}
+
+void Bureaucrat::executeForm(AForm const& form) const {
+  try {
+    form.execute(*this);
+    std::cout << getName() << " executed " << form.getName() << std::endl;
+  } catch (std::exception& e) {
+    std::cout << getName() << " couldn’t execute " << form.getName()
+              << " because " << e.what() << std::endl;
   }
 }

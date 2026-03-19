@@ -31,9 +31,13 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 
 Bureaucrat::~Bureaucrat() {}
 
-const std::string& Bureaucrat::getName() const { return name_; }
+const std::string& Bureaucrat::getName() const {
+  return name_;
+}
 
-int Bureaucrat::getGrade() const { return grade_; }
+int Bureaucrat::getGrade() const {
+  return grade_;
+}
 
 void Bureaucrat::incrementGrade() {
   if (grade_-- <= 1)
