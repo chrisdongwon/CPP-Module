@@ -12,8 +12,7 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) : count_(0), index_(0) {
-}
+PhoneBook::PhoneBook(void) : count_(0), index_(0) {}
 
 const Contact& PhoneBook::contacts(size_t index) const {
   return contacts_[index];

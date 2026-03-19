@@ -25,8 +25,7 @@ Account::Account(void)
     : _accountIndex(_nbAccounts++),
       _amount(0),
       _nbDeposits(0),
-      _nbWithdrawals(0) {
-}
+      _nbWithdrawals(0) {}
 
 Account::Account(int initial_deposit)
     : _accountIndex(_nbAccounts++),

@@ -17,8 +17,7 @@ Contact::Contact(void)
       first_name_(),
       last_name_(),
       nickname_(),
-      phone_number_() {
-}
+      phone_number_() {}
 
 Contact::Contact(const std::string& darkest_secret,
                  const std::string& first_name, const std::string& last_name,
@@ -27,8 +26,7 @@ Contact::Contact(const std::string& darkest_secret,
       first_name_(first_name),
       last_name_(last_name),
       nickname_(nickname),
-      phone_number_(phone_number) {
-}
+      phone_number_(phone_number) {}
 
 const std::string& Contact::darkest_secret(void) const {
   return darkest_secret_;
