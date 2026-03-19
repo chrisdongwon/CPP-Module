@@ -18,8 +18,7 @@
 const Harl::Level Harl::levels_[4] = {
     {"DEBUG", DEBUG}, {"INFO", INFO}, {"WARNING", WARNING}, {"ERROR", ERROR}};
 
-Harl::Harl(const char* level) : level_(level) {
-}
+Harl::Harl(const char* level) : level_(level) {}
 
 int Harl::HarlFilter(void) {
   switch (GetLevel(level_)) {

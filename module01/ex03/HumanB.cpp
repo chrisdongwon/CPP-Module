@@ -14,8 +14,7 @@
 
 #include <iostream>
 
-HumanB::HumanB(const std::string& name) : name_(name), weapon_(NULL) {
-}
+HumanB::HumanB(const std::string& name) : name_(name), weapon_(NULL) {}
 
 void HumanB::setWeapon(Weapon& weapon) {
   weapon_ = &weapon;

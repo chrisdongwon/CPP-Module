@@ -12,8 +12,7 @@
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(const std::string& type) : type_(type) {
-}
+Weapon::Weapon(const std::string& type) : type_(type) {}
 
 const std::string& Weapon::getType(void) const {
   return type_;

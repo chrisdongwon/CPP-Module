@@ -14,8 +14,7 @@
 
 #include <iostream>
 
-Zombie::Zombie(const std::string& name) : name_(name) {
-}
+Zombie::Zombie(const std::string& name) : name_(name) {}
 
 Zombie::~Zombie(void) {
   std::cout << name_ << " has been destroyed." << std::endl;

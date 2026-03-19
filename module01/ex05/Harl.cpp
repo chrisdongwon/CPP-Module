@@ -19,8 +19,7 @@ const Harl::Level Harl::levels_[4] = {{"DEBUG", &Harl::debug},
                                       {"WARNING", &Harl::warning},
                                       {"ERROR", &Harl::error}};
 
-Harl::Harl(void) {
-}
+Harl::Harl(void) {}
 
 void Harl::complain(std::string level) {
   for (int i = 0; i < 4; ++i) {

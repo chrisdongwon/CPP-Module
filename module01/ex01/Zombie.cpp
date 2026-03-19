@@ -14,11 +14,9 @@
 
 #include <iostream>
 
-Zombie::Zombie(void) : name_("") {
-}
+Zombie::Zombie(void) : name_("") {}
 
-Zombie::Zombie(const std::string& name) : name_(name) {
-}
+Zombie::Zombie(const std::string& name) : name_(name) {}
 
 void Zombie::announce(void) {
   std::cout << name_ << ": BraiiiiiiinnnzzzZ..." << std::endl;
