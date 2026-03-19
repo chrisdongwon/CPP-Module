@@ -14,8 +14,7 @@
 
 #include <cmath>
 
-Fixed::Fixed(void) : value_(0) {
-}
+Fixed::Fixed(void) : value_(0) {}
 
 Fixed::Fixed(const int value) {
   value_ = value << kFractionalBits;
@@ -36,8 +35,7 @@ Fixed& Fixed::operator=(const Fixed& other) {
   return *this;
 }
 
-Fixed::~Fixed() {
-}
+Fixed::~Fixed() {}
 
 bool Fixed::operator>(const Fixed& other) const {
   return value_ > other.value_;
