@@ -24,7 +24,7 @@ class FragTrap : virtual public ClapTrap {
 
   ~FragTrap();
 
-  void highFivesGuys( void );
+  void highFivesGuys(void);
 
  protected:
   static const int kHitPoints = 100;

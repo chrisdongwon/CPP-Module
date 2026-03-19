@@ -15,10 +15,7 @@
 #include <iostream>
 
 ClapTrap::ClapTrap(const std::string& name)
-    : name_(name),
-      hit_points_(10),
-      energy_points_(10),
-      attack_damage_(0) {
+    : name_(name), hit_points_(10), energy_points_(10), attack_damage_(0) {
   std::cout << "ClapTrap " << name_ << " constructed!" << std::endl;
 }
 
@@ -44,8 +41,7 @@ ClapTrap::~ClapTrap() {
 void ClapTrap::attack(const std::string& target) {
   if (hit_points_ <= 0 || energy_points_ <= 0) {
     std::cout << "ClapTrap " << name_ << " does not have enough hit points "
-              << "or energy points to attack " 
-              << target << "!" << std::endl;
+              << "or energy points to attack " << target << "!" << std::endl;
   } else {
     --energy_points_;
     std::cout << "ClapTrap " << name_ << " attacks " << target << ", causing "
@@ -62,8 +58,8 @@ void ClapTrap::takeDamage(unsigned int amount) {
       hit_points_ = 0;
     }
     std::cout << "ClapTrap " << name_ << " takes " << amount
-              << " points of damage! Remaining hit points: "
-              << hit_points_ << std::endl;
+              << " points of damage! Remaining hit points: " << hit_points_
+              << std::endl;
   }
 }
 

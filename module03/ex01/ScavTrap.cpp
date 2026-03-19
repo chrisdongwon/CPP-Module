@@ -14,8 +14,7 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap(const std::string& name)
-    : ClapTrap(name) {
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
   hit_points_ = 100;
   energy_points_ = 50;
   attack_damage_ = 20;
@@ -38,13 +37,11 @@ ScavTrap::~ScavTrap() {
 void ScavTrap::attack(const std::string& target) {
   if (hit_points_ <= 0 || energy_points_ <= 0) {
     std::cout << "ScavTrap " << name_ << " does not have enough hit points "
-              << "or energy points to attack " 
-              << target << "!" << std::endl;
+              << "or energy points to attack " << target << "!" << std::endl;
   } else {
     --energy_points_;
-    std::cout << "ScavTrap " << name_ << " attacks " << target
-              << ", causing " << attack_damage_ << " points of damage!"
-              << std::endl;
+    std::cout << "ScavTrap " << name_ << " attacks " << target << ", causing "
+              << attack_damage_ << " points of damage!" << std::endl;
   }
 }
 

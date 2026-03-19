@@ -15,10 +15,7 @@
 #include <iostream>
 
 DiamondTrap::DiamondTrap(const std::string& name)
-    : ClapTrap(name + "_clap_name"),
-      ScavTrap(),
-      FragTrap(),
-      name_(name) {
+    : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), name_(name) {
   hit_points_ = FragTrap::kHitPoints;
   energy_points_ = ScavTrap::kEnergyPoints;
   attack_damage_ = FragTrap::kAttackDamage;
@@ -26,9 +23,7 @@ DiamondTrap::DiamondTrap(const std::string& name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
-    : ClapTrap(other),
-      ScavTrap(),
-      FragTrap() {
+    : ClapTrap(other), ScavTrap(), FragTrap() {
   name_ = other.name_;
   hit_points_ = other.hit_points_;
   energy_points_ = other.energy_points_;
@@ -36,8 +31,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& other)
   std::cout << "DiamondTrap " << name_ << " copied!" << std::endl;
 }
 
-DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
-{
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
   if (this != &other) {
     ClapTrap::operator=(other);
     name_ = other.name_;
@@ -57,7 +51,6 @@ void DiamondTrap::attack(const std::string& target) {
 }
 
 void DiamondTrap::whoAmI() {
-  std::cout << "I am DiamondTrap " << name_
-            << " and my ClapTrap name is " << ClapTrap::name_ << "!"
-            << std::endl;
+  std::cout << "I am DiamondTrap " << name_ << " and my ClapTrap name is "
+            << ClapTrap::name_ << "!" << std::endl;
 }

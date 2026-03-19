@@ -14,7 +14,7 @@
 
 #include "FragTrap.hpp"
 
-int main( void ) {
+int main(void) {
   FragTrap foo("Foo");
 
   foo.attack("Bar");

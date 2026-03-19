@@ -12,7 +12,7 @@
 
 #include "ScavTrap.hpp"
 
-int main( void ) {
+int main(void) {
   ScavTrap foo("Foo");
 
   foo.attack("Bar");

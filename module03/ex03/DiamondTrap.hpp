@@ -22,7 +22,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
   DiamondTrap(const DiamondTrap& other);
 
   DiamondTrap& operator=(const DiamondTrap& other);
-  
+
   ~DiamondTrap();
 
   void attack(const std::string& target);
@@ -32,4 +32,4 @@ class DiamondTrap : public ScavTrap, public FragTrap {
   std::string name_;
 };
 
-#endif // DIAMONDTRAP_HPP_
+#endif  // DIAMONDTRAP_HPP_
