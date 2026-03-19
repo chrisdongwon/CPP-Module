@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 11:31:24 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 13:31:02 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 12:25:09 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 12:25:42 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP_
-#define ROBOTOMYREQUESTFORM_HPP_
+#ifndef INTERN_HPP_
+#define INTERN_HPP_
+
+#include <string>
 
 #include "AForm.hpp"
 
-class RobotomyRequestForm : public AForm {
+class Intern {
  public:
-  RobotomyRequestForm(const std::string& target = "");
-  // copy constructor
-  // assignment operator
-  // destructor
-  
-  void executeAction() const;
+  Intern();
+  Intern(const Intern& other);
+  Intern& operator=(const Intern& other);
+  ~Intern();
+
+  AForm* makeForm(const std::string& name, const std::string& target);
 
  private:
-  std::string target_;
+  AForm* createShrubbery(const std::string& target);
+  AForm* createRobotomy(const std::string& target);
+  AForm* createPardon(const std::string& target);
 };
 
-#endif  // ROBOTOMYREQUESTFORM_HPP_
+#endif // INTERN_HPP_

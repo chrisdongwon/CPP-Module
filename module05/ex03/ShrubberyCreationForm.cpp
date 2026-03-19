@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 11:31:24 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 13:31:02 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 10:58:42 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 11:35:32 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP_
-#define ROBOTOMYREQUESTFORM_HPP_
+#include "ShrubberyCreationForm.hpp"
 
-#include "AForm.hpp"
+#include <fstream>
 
-class RobotomyRequestForm : public AForm {
- public:
-  RobotomyRequestForm(const std::string& target = "");
-  // copy constructor
-  // assignment operator
-  // destructor
-  
-  void executeAction() const;
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
+    : AForm("Shrubbery", 145, 137), target_(target) {}
 
- private:
-  std::string target_;
-};
-
-#endif  // ROBOTOMYREQUESTFORM_HPP_
+void ShrubberyCreationForm::executeAction() const {
+  std::ofstream file((target_ + "_shrubbery").c_str());
+  file << "   ^   \n"
+          "  ^^^  \n"
+          " ^^^^^ \n"
+          "   |   \n";
+}

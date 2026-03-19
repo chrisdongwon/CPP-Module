@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 13:34:39 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 10:47:30 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 12:38:43 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class Bureaucrat;
 
 class Form {
  public:
-  Form(const std::string& name, int gradeToSign, int gradeToExecute);
+  Form(const std::string& name = "", int gradeToSign = 150,
+       int gradeToExecute = 150);
   Form(const Form& other);
   Form& operator=(const Form& other);
   ~Form();

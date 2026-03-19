@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 13:16:15 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 13:44:55 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 12:30:39 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main() {
   try {
+    Bureaucrat temp;
     Bureaucrat a("Alice", 2);
     std::cout << a << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 10:57:08 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 11:35:23 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 13:30:47 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 
 class ShrubberyCreationForm : public AForm {
  public:
-  ShrubberyCreationForm(const std::string& target);
+  ShrubberyCreationForm(const std::string& target = "");
+  // copy constructor
+  // assignment operator
+  // destructor
+  
   void executeAction() const;
 
  private:

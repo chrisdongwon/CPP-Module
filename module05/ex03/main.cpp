@@ -5,29 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/18 14:12:25 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 12:40:58 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 11:46:31 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 11:49:46 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main() {
-  try {
-    Bureaucrat boss("Boss", 1);
-    Bureaucrat intern("Intern", 150);
+  Bureaucrat boss("Boss", 1);
+  Bureaucrat intern("Intern", 150);
 
-    Form contract("Contract", 50, 25);
+  ShrubberyCreationForm shrub("home");
+  RobotomyRequestForm robot("Bender");
+  PresidentialPardonForm pardon("Arthur Dent");
 
-    std::cout << contract << std::endl;
+  boss.signForm(shrub);
+  boss.executeForm(shrub);
 
-    intern.signForm(contract);
-    boss.signForm(contract);
+  boss.signForm(robot);
+  boss.executeForm(robot);
 
-    std::cout << contract << std::endl;
-  } catch (std::exception& e) {
-    std::cout << "Exception: " << e.what() << std::endl;
-  }
+  boss.signForm(pardon);
+  boss.executeForm(pardon);
+
+  intern.executeForm(pardon);
   return 0;
 }

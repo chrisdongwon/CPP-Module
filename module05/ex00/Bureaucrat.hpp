@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 12:45:13 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 10:32:41 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 12:36:21 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Bureaucrat {
  public:
-  Bureaucrat(const std::string& name, int grade);
+  Bureaucrat(const std::string& name = "", int grade = 150);
   Bureaucrat(const Bureaucrat& other);
   Bureaucrat& operator=(const Bureaucrat& other);
   ~Bureaucrat();

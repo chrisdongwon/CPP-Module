@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 11:31:24 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 13:31:02 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 11:42:34 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 11:43:50 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP_
-#define ROBOTOMYREQUESTFORM_HPP_
+#include "PresidentialPardonForm.hpp"
 
-#include "AForm.hpp"
+#include <iostream>
 
-class RobotomyRequestForm : public AForm {
- public:
-  RobotomyRequestForm(const std::string& target = "");
-  // copy constructor
-  // assignment operator
-  // destructor
-  
-  void executeAction() const;
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
+    : AForm("Pardon", 25, 5), target_(target) {}
 
- private:
-  std::string target_;
-};
-
-#endif  // ROBOTOMYREQUESTFORM_HPP_
+void PresidentialPardonForm::executeAction() const {
+  std::cout << target_ << " has been pardoned by Zaphod Beeblebrox\n";
+}
