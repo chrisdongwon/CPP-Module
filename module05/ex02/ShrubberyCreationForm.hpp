@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/18 14:31:39 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 14:36:40 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 10:57:08 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 11:00:30 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {
-  public:
-    ShrubberyCreationForm(const std::string& target);
-    
-    void executeAction() const;
+ public:
+  ShrubberyCreationForm(const std::string& target);
+  void executeAction() const;
 
-  private:
-    std::string target_;
+ private:
+  std::string target;
 };
 
-#endif // SHRUBBERYCREATIONFORM_HPP_
+#endif  // SHRUBBERYCREATIONFORM_HPP_

@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 01:07:57 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 01:09:10 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:02:38 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB {
   explicit HumanB(const std::string& name);
 
   void setWeapon(Weapon& weapon);
-  void attack( void ) const;
+  void attack(void) const;
 
  private:
   std::string name_;

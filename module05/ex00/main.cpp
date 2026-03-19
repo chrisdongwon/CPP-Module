@@ -21,7 +21,7 @@ int main() {
     std::cout << a << std::endl;
 
     a.incrementGrade();
-  } catch (std::exception &e) {
+  } catch (std::exception& e) {
     std::cout << "Exception: " << e.what() << std::endl;
   }
 
@@ -32,7 +32,7 @@ int main() {
     std::cout << b << std::endl;
 
     b.decrementGrade();
-  } catch (std::exception &e) {
+  } catch (std::exception& e) {
     std::cout << "Exception: " << e.what() << std::endl;
   }
 
@@ -40,7 +40,7 @@ int main() {
 
   try {
     Bureaucrat c("Charlie", 0);
-  } catch (std::exception &e) {
+  } catch (std::exception& e) {
     std::cout << "Exception: " << e.what() << std::endl;
   }
 

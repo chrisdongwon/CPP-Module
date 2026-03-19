@@ -14,7 +14,7 @@
 
 #include <cmath>
 
-Fixed::Fixed( void ) : value_(0) {
+Fixed::Fixed(void) : value_(0) {
   std::cout << "Default constructor called" << std::endl;
 }
 
@@ -45,7 +45,7 @@ Fixed::~Fixed() {
   std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits( void ) const {
+int Fixed::getRawBits(void) const {
   std::cout << "getRawBits member function called" << std::endl;
   return value_;
 }
@@ -55,15 +55,15 @@ void Fixed::setRawBits(int const raw) {
   value_ = raw;
 }
 
-float Fixed::toFloat( void ) const {
+float Fixed::toFloat(void) const {
   return static_cast<float>(value_) / (1 << kFractionalBits);
 }
 
-int Fixed::toInt ( void ) const {
+int Fixed::toInt(void) const {
   return value_ >> kFractionalBits;
 }
 
-std::ostream& operator<<(std::ostream &os, const Fixed& fixed) {
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
   os << fixed.toFloat();
   return os;
 }

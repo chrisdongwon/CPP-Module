@@ -17,7 +17,7 @@
 
 class Point {
  public:
-  Point( void );
+  Point(void);
   Point(float x, float y);
 
   Point(const Point& other);
@@ -26,8 +26,8 @@ class Point {
 
   ~Point();
 
-  Fixed x( void ) const;
-  Fixed y( void ) const;
+  Fixed x(void) const;
+  Fixed y(void) const;
 
  private:
   const Fixed x_;

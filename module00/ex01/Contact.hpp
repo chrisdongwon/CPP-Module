@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 13:26:02 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/26 13:30:14 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:01:02 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,16 @@
 
 class Contact {
  public:
-  Contact( void );
-  Contact(const std::string& darkest_secret,
-          const std::string& first_name,
-          const std::string& last_name,
-          const std::string& nickname,
+  Contact(void);
+  Contact(const std::string& darkest_secret, const std::string& first_name,
+          const std::string& last_name, const std::string& nickname,
           const std::string& phone_number);
 
-  const std::string& darkest_secret( void ) const;
-  const std::string& first_name( void ) const;
-  const std::string& last_name( void ) const;
-  const std::string& nickname( void ) const;
-  const std::string& phone_number( void ) const;
+  const std::string& darkest_secret(void) const;
+  const std::string& first_name(void) const;
+  const std::string& last_name(void) const;
+  const std::string& nickname(void) const;
+  const std::string& phone_number(void) const;
 
  private:
   std::string darkest_secret_;

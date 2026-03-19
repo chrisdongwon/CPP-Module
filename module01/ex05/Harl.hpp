@@ -17,21 +17,21 @@
 
 class Harl {
  public:
-  Harl( void );
+  Harl(void);
   void complain(std::string level);
 
  private:
-  void debug( void );
-  void error( void );
-  void info ( void );
-  void warning( void );
+  void debug(void);
+  void error(void);
+  void info(void);
+  void warning(void);
 
   struct Level {
     const std::string name;
-    void (Harl::*func)( void );
+    void (Harl::*func)(void);
   };
-  
+
   static const Level levels_[4];
 };
 
-#endif // HARL_HPP_
+#endif  // HARL_HPP_

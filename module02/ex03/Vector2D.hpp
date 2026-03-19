@@ -17,7 +17,7 @@
 
 class Vector2D {
  public:
-  Vector2D( void );
+  Vector2D(void);
   Vector2D(const Point& start, const Point& end);
 
   Vector2D(const Vector2D& other);

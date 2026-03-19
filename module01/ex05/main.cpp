@@ -12,7 +12,7 @@
 
 #include "Harl.hpp"
 
-int main( void ) {
+int main(void) {
   Harl h;
 
   h.complain("DEBUG");

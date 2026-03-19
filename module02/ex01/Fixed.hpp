@@ -17,26 +17,26 @@
 
 class Fixed {
  public:
-  Fixed( void );
+  Fixed(void);
   Fixed(const Fixed& other);
   explicit Fixed(const int value);
   explicit Fixed(const float value);
 
   ~Fixed();
-  
+
   Fixed& operator=(const Fixed& other);
 
-  int getRawBits( void ) const;
+  int getRawBits(void) const;
   void setRawBits(int const raw);
 
-  float toFloat( void ) const;
-  int toInt ( void ) const;
+  float toFloat(void) const;
+  int toInt(void) const;
 
  private:
   int value_;
   static const int kFractionalBits = 8;
 };
 
-std::ostream& operator<<(std::ostream &os, const Fixed& fixed);
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif  // FIXED_HPP_

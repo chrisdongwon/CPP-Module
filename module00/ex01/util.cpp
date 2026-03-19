@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 17:39:43 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/14 17:12:13 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:01:32 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,14 @@ bool SafeGetline(std::string& input) {
 const std::string PromptUserInput(const std::string field_type) {
   std::string response;
 
-  while (true)
-  {
+  while (true) {
     std::cout << field_type << ": ";
     if (!SafeGetline(response)) {
       return response;
     }
     if (!response.empty())
       break;
-    std::cout << "Error: " << field_type 
+    std::cout << "Error: " << field_type
               << " cannot be empty. Please try again." << std::endl;
   }
   return response;
@@ -69,12 +68,12 @@ const std::string PromptUserNumber(const std::string field_type) {
 }
 
 size_t StringToSizeT(const std::string& str) {
-    size_t result;
-    std::stringstream ss(str);
+  size_t result;
+  std::stringstream ss(str);
 
-    ss >> result;
-    if (ss.fail() || !ss.eof()) {
-        throw std::invalid_argument("Expected a non-negative integer (size_t)");
-    }
-    return result;
+  ss >> result;
+  if (ss.fail() || !ss.eof()) {
+    throw std::invalid_argument("Expected a non-negative integer (size_t)");
+  }
+  return result;
 }

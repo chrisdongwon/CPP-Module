@@ -17,17 +17,11 @@
 
 class Harl {
  public:
-  explicit Harl(const char *level);
-  int HarlFilter( void );
+  explicit Harl(const char* level);
+  int HarlFilter(void);
 
  private:
-  enum HarlLevel {
-    DEBUG,
-    INFO,
-    WARNING,
-    ERROR,
-    NONE
-  };
+  enum HarlLevel { DEBUG, INFO, WARNING, ERROR, NONE };
 
   struct Level {
     const std::string name;
@@ -36,13 +30,13 @@ class Harl {
 
   HarlLevel GetLevel(const std::string& level) const;
 
-  void debug( void );
-  void info ( void );
-  void warning( void );
-  void error( void );
+  void debug(void);
+  void info(void);
+  void warning(void);
+  void error(void);
 
   static const Level levels_[4];
   std::string level_;
 };
 
-#endif // HARL_HPP_
+#endif  // HARL_HPP_

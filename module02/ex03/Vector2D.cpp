@@ -12,19 +12,18 @@
 
 #include "Vector2D.hpp"
 
-Vector2D::Vector2D( void )
-    : i_(0),
-      j_(0) {}
+Vector2D::Vector2D(void) : i_(0), j_(0) {
+}
 
 Vector2D::Vector2D(const Point& start, const Point& end)
-    : i_(end.x() - start.x()),
-      j_(end.y() - start.y()) {}
+    : i_(end.x() - start.x()), j_(end.y() - start.y()) {
+}
 
-Vector2D::Vector2D(const Vector2D& other)
-    : i_(other.i_),
-      j_(other.j_) {}
+Vector2D::Vector2D(const Vector2D& other) : i_(other.i_), j_(other.j_) {
+}
 
-Vector2D::~Vector2D() {}
+Vector2D::~Vector2D() {
+}
 
 Vector2D& Vector2D::operator=(const Vector2D& other) {
   if (this != &other) {

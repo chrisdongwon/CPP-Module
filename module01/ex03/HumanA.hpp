@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 01:01:32 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 01:06:06 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:02:33 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanA {
  public:
   HumanA(const std::string& name, Weapon& weapon);
 
-  void attack( void ) const;
+  void attack(void) const;
 
  private:
   std::string name_;

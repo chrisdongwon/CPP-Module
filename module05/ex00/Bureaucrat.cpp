@@ -6,15 +6,14 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 12:56:13 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 13:44:50 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 10:47:16 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade)
-    : name_(name),
-      grade_(grade) {
+    : name_(name), grade_(grade) {
   if (grade < 1)
     throw GradeTooHighException();
   if (grade > 150)
@@ -22,8 +21,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade)
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
-    : name_(other.name_), 
-      grade_(other.grade_) {}
+    : name_(other.name_), grade_(other.grade_) {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
   if (this != &other)
@@ -33,13 +31,9 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 
 Bureaucrat::~Bureaucrat() {}
 
-const std::string& Bureaucrat::getName() const {
-  return name_;
-}
+const std::string& Bureaucrat::getName() const { return name_; }
 
-int Bureaucrat::getGrade() const {
-  return grade_;
-}
+int Bureaucrat::getGrade() const { return grade_; }
 
 void Bureaucrat::incrementGrade() {
   if (grade_-- <= 1)

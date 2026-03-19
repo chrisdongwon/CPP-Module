@@ -6,21 +6,20 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 10:07:04 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/28 14:47:54 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:01:12 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook( void )
-    : count_(0),
-      index_(0) {}
+PhoneBook::PhoneBook(void) : count_(0), index_(0) {
+}
 
 const Contact& PhoneBook::contacts(size_t index) const {
   return contacts_[index];
 }
 
-size_t PhoneBook::count( void ) const {
+size_t PhoneBook::count(void) const {
   return count_;
 }
 

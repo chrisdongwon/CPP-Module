@@ -6,13 +6,13 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 17:47:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/16 00:38:16 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:02:23 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
 #include <iostream>
+
+#include "Zombie.hpp"
 
 Zombie* zombieHorde(int N, const std::string name) {
   if (N <= 0) {
@@ -25,8 +25,8 @@ Zombie* zombieHorde(int N, const std::string name) {
     }
     return horde;
   } catch (const std::bad_alloc& e) {
-    std::cerr << "Memory allocation failed for zombie horde: "
-              << e.what() << std::endl;
+    std::cerr << "Memory allocation failed for zombie horde: " << e.what()
+              << std::endl;
     return NULL;
   }
 }

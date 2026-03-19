@@ -17,16 +17,15 @@
 
 class Replacer {
  public:
-  Replacer(const std::string &filename,
-           const std::string &s1,
-           const std::string &s2);
+  Replacer(const std::string& filename, const std::string& s1,
+           const std::string& s2);
 
-  void Process( void );
+  void Process(void);
 
  private:
-  void Read( void );
-  void Replace( void );
-  void Write( void ) const;
+  void Read(void);
+  void Replace(void);
+  void Write(void) const;
 
   std::string filename_;
   std::string s1_;
@@ -34,6 +33,6 @@ class Replacer {
   std::string content_;
 };
 
-void RunReplacer(int argc, char **argv);
+void RunReplacer(int argc, char** argv);
 
 #endif  // REPLACER_HPP_

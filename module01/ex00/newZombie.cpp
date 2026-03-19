@@ -6,13 +6,13 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 17:17:50 by cwon              #+#    #+#             */
-/*   Updated: 2025/10/13 12:52:15 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:02:02 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
 #include <iostream>
+
+#include "Zombie.hpp"
 
 Zombie* newZombie(std::string name) {
   try {

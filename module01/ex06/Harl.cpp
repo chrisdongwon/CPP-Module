@@ -16,15 +16,12 @@
 #include <iostream>
 
 const Harl::Level Harl::levels_[4] = {
-  {"DEBUG", DEBUG},
-  {"INFO", INFO},
-  {"WARNING", WARNING},
-  {"ERROR", ERROR}
-};
+    {"DEBUG", DEBUG}, {"INFO", INFO}, {"WARNING", WARNING}, {"ERROR", ERROR}};
 
-Harl::Harl(const char *level): level_(level) {}
+Harl::Harl(const char* level) : level_(level) {
+}
 
-int Harl::HarlFilter( void ) {
+int Harl::HarlFilter(void) {
   switch (GetLevel(level_)) {
     case DEBUG:
       debug();
@@ -46,8 +43,7 @@ int Harl::HarlFilter( void ) {
   return EXIT_SUCCESS;
 }
 
-Harl::HarlLevel Harl::GetLevel(const std::string& level) const
-{
+Harl::HarlLevel Harl::GetLevel(const std::string& level) const {
   for (int i = 0; i < 4; ++i) {
     if (levels_[i].name == level) {
       return levels_[i].harl_level;
@@ -56,28 +52,31 @@ Harl::HarlLevel Harl::GetLevel(const std::string& level) const
   return NONE;
 }
 
-void Harl::debug( void ) {
+void Harl::debug(void) {
   std::cout << "[ DEBUG ]" << std::endl;
   std::cout << "I love having extra bacon for my "
             << "7XL-double-cheese-triple-pickle-special-ketchup burger.\n"
-            << "I really do!\n" << std::endl;
+            << "I really do!\n"
+            << std::endl;
 }
 
-void Harl::info ( void ) {
+void Harl::info(void) {
   std::cout << "[ INFO ]" << std::endl;
   std::cout << "I cannot believe adding extra bacon costs more money.\n"
             << "You didn't put enough bacon in my burger! "
-            << "If you did, I wouldn't be asking for more!\n" << std::endl;
+            << "If you did, I wouldn't be asking for more!\n"
+            << std::endl;
 }
 
-void Harl::warning( void ) {
+void Harl::warning(void) {
   std::cout << "[ WARNING ]" << std::endl;
   std::cout << "I think I deserve to have some extra bacon for free.\n"
             << "I've been coming for years, whereas you started working here "
-            << "just last month.\n" << std::endl;
+            << "just last month.\n"
+            << std::endl;
 }
 
-void Harl::error( void ) {
+void Harl::error(void) {
   std::cout << "[ ERROR ]" << std::endl;
   std::cout << "This is unacceptable! I want to speak to the manager now.\n"
             << std::endl;

@@ -16,24 +16,21 @@
 #include <fstream>
 #include <iostream>
 
-Replacer::Replacer(const std::string &filename,
-                   const std::string &s1,
-                   const std::string &s2)
-    : filename_(filename),
-      s1_(s1),
-      s2_(s2) {
+Replacer::Replacer(const std::string& filename, const std::string& s1,
+                   const std::string& s2)
+    : filename_(filename), s1_(s1), s2_(s2) {
   if (s1.empty()) {
     throw std::invalid_argument("s1 cannot be empty");
   }
 }
 
-void Replacer::Process( void ) {
+void Replacer::Process(void) {
   Read();
   Replace();
   Write();
 }
 
-void Replacer::Read( void ) {
+void Replacer::Read(void) {
   std::ifstream infile(filename_.c_str());
 
   if (!infile) {
@@ -44,7 +41,7 @@ void Replacer::Read( void ) {
   infile.close();
 }
 
-void Replacer::Replace( void ) {
+void Replacer::Replace(void) {
   std::string result;
   size_t pos = 0, found;
 
@@ -57,9 +54,9 @@ void Replacer::Replace( void ) {
   content_.swap(result);
 }
 
-void Replacer::Write( void ) const {
+void Replacer::Write(void) const {
   std::ofstream outfile((filename_ + ".replace").c_str());
-  
+
   if (!outfile) {
     throw std::runtime_error("Cannot open output file: " + filename_ +
                              ".replace");
@@ -68,7 +65,7 @@ void Replacer::Write( void ) const {
   outfile.close();
 }
 
-void RunReplacer(int argc, char **argv) {
+void RunReplacer(int argc, char** argv) {
   if (argc != 4) {
     std::cerr << "usage: " << argv[0] << " filename s1 s2\n";
     exit(EXIT_FAILURE);
@@ -80,7 +77,7 @@ void RunReplacer(int argc, char **argv) {
 
   try {
     Replacer(filename, s1, s2).Process();
-  } catch (const std::exception &e) {
+  } catch (const std::exception& e) {
     std::cerr << "Error: " << e.what() << "\n";
     exit(EXIT_FAILURE);
   }

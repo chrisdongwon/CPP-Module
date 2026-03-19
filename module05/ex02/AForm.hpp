@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/18 14:22:59 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 14:24:51 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 10:52:52 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 10:54:33 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,42 +19,45 @@
 class Bureaucrat;
 
 class AForm {
-  public:
-    AForm(const std::string& name, int sign, int exec);
-    AForm(const AForm& other);
-    AForm& operator=(const AForm& other);
-    virtual ~AForm();
+ public:
+  AForm(const std::string& name, int sign, int exec);
+  AForm(const AForm& other);
+  AForm& operator=(const AForm& other);
+  virtual ~AForm();
 
-    bool getIsSigned() const;
-    const std::string& getName() const;
-    int getGradeToExecute() const;
-    int getGradeToSign() const;
+  bool getIsSigned() const;
+  const std::string& getName() const;
+  int getGradeToExecute() const;
+  int getGradeToSign() const;
 
-    void beSigned(const Bureaucrat& b);
+  void beSigned(const Bureaucrat& b);
 
-    void execute(Bureaucrat const & executor) const;
+  void execute(Bureaucrat const& executor) const;
 
-    virtual void executeAction() const = 0;
+  virtual void executeAction() const = 0;
 
-    class GradeTooHighException : public std::exception {
-      public: const char* what() const throw();
-    };
-    
-    class GradeTooLowException : public std::exception {
-      public: const char* what() const throw();
-    };
-    
-    class FormNotSignedException : public std::exception {
-      public: const char* what() const throw();
-    };
+  class GradeTooHighException : public std::exception {
+   public:
+    const char* what() const throw();
+  };
 
-  private:
-    bool isSigned;
-    const int gradeToExecute;
-    const int gradeToSign;
-    const std::string name;
+  class GradeTooLowException : public std::exception {
+   public:
+    const char* what() const throw();
+  };
+
+  class FormNotSignedException : public std::exception {
+   public:
+    const char* what() const throw();
+  };
+
+ private:
+  bool isSigned;
+  const int gradeToExecute;
+  const int gradeToSign;
+  const std::string name;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& f);
 
-#endif // AFORM_HPP_
+#endif  // AFORM_HPP_

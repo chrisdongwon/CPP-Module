@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 14:41:37 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/28 14:50:17 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:01:17 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 class PhoneBook {
  public:
-  PhoneBook( void );
+  PhoneBook(void);
 
   const Contact& contacts(size_t index) const;
-  size_t count( void ) const;
+  size_t count(void) const;
 
   void AddContact(const Contact& contact);
 

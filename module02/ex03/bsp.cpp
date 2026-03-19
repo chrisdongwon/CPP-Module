@@ -20,7 +20,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const p) {
   Vector2D ap(a, p);
   Vector2D bp(b, p);
   Vector2D cp(c, p);
-  
+
   Fixed det1 = ab.Determinant(ap);
   Fixed det2 = bc.Determinant(bp);
   Fixed det3 = ca.Determinant(cp);
@@ -28,7 +28,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const p) {
   // determinant of parallel vectors is zero
   // if the determinant is zero, then the point lies on the edge
   if (det1 == Fixed(0) || det2 == Fixed(0) || det3 == Fixed(0)) {
-    return false; 
+    return false;
   }
 
   bool found_neg = (det1 < Fixed(0)) || (det2 < Fixed(0)) || (det3 < Fixed(0));

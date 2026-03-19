@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:12:25 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 14:13:17 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 10:47:32 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main() {
 
     intern.signForm(contract);
     boss.signForm(contract);
-    
+
     std::cout << contract << std::endl;
   } catch (std::exception& e) {
     std::cout << "Exception: " << e.what() << std::endl;

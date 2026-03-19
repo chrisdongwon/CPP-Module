@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 13:34:48 by cwon              #+#    #+#             */
-/*   Updated: 2025/09/28 14:48:54 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:01:20 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ static std::string FormatField(const std::string& str) {
   return str;
 }
 
-static void PrintHeader( void ) {
-  std::cout << std::setw(10) << "Index" << "|"
-            << std::setw(10) << "First name" << "|"
-            << std::setw(10) << "Last name" << "|"
-            << std::setw(10) << "Nickname" << "\n";
+static void PrintHeader(void) {
+  std::cout << std::setw(10) << "Index" << "|" << std::setw(10) << "First name"
+            << "|" << std::setw(10) << "Last name" << "|" << std::setw(10)
+            << "Nickname" << "\n";
 }
 
 static void PrintContacts(const PhoneBook& phonebook) {
@@ -39,10 +38,10 @@ static void PrintContacts(const PhoneBook& phonebook) {
   PrintHeader();
   for (size_t i = 0; i < count; ++i) {
     const Contact& c = phonebook.contacts(i % SIZE);
-    std::cout << std::setw(10) << i + 1 << "|"
-              << std::setw(10) << FormatField(c.first_name()) << "|"
-              << std::setw(10) << FormatField(c.last_name()) << "|"
-              << std::setw(10) << FormatField(c.nickname()) << "\n";
+    std::cout << std::setw(10) << i + 1 << "|" << std::setw(10)
+              << FormatField(c.first_name()) << "|" << std::setw(10)
+              << FormatField(c.last_name()) << "|" << std::setw(10)
+              << FormatField(c.nickname()) << "\n";
   }
 }
 
@@ -55,7 +54,7 @@ static void PrintContact(const Contact& c) {
 }
 
 void SearchInteractive(PhoneBook& phonebook) {
-  PrintContacts(phonebook);  
+  PrintContacts(phonebook);
   std::string input = PromptUserNumber("Index");
 
   try {
@@ -79,15 +78,12 @@ static void AddContactInteractive(PhoneBook& phonebook) {
   std::string nickname = PromptUserInput("Nickname");
   std::string phone_number = PromptUserNumber("Phone Number");
   std::string darkest_secret = PromptUserInput("Darkest secret");
-  Contact new_contact = Contact(darkest_secret,
-                                 first_name,
-                                 last_name,
-                                 nickname,
-                                 phone_number);
+  Contact new_contact =
+      Contact(darkest_secret, first_name, last_name, nickname, phone_number);
   phonebook.AddContact(new_contact);
 }
 
-void RunPhoneBook( void ) {
+void RunPhoneBook(void) {
   PhoneBook phonebook;
   std::string command;
 

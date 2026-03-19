@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-
 #include <iostream>
 
-int main( void ) {
+#include "Fixed.hpp"
+
+int main(void) {
   Fixed a;
-  Fixed b( a );
+  Fixed b(a);
   Fixed c;
 
   c = b;

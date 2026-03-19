@@ -6,17 +6,16 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 01:13:38 by cwon              #+#    #+#             */
-/*   Updated: 2025/08/18 14:48:33 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/19 11:02:40 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main()
-{
+int main() {
   {
-    Weapon  club = Weapon("crude spiked club");
+    Weapon club = Weapon("crude spiked club");
 
     HumanA bob("Bob", club);
     bob.attack();
@@ -24,7 +23,7 @@ int main()
     bob.attack();
   }
   {
-    Weapon  club = Weapon("crude spiked club");
+    Weapon club = Weapon("crude spiked club");
 
     HumanB jim("Jim");
     jim.setWeapon(club);
@@ -32,6 +31,6 @@ int main()
     club.setType("some other type of club");
     jim.attack();
   }
-  
+
   return 0;
 }

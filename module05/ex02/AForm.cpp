@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/18 14:25:31 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/18 14:27:59 by cwon             ###   ########.fr       */
+/*   Created: 2026/03/19 10:55:35 by cwon              #+#    #+#             */
+/*   Updated: 2026/03/19 10:56:10 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 #include "Bureaucrat.hpp"
 
 AForm::AForm(const std::string& name, int s, int e)
-    : isSigned(false),
-      gradeToExecute(e),
-      gradeToSign(s),
-      name(name) {
+    : name(name), isSigned(false), gradeToSign(s), gradeToExecute(e) {
   if (s < 1 || e < 1)
     throw GradeTooHighException();
   if (s > 150 || e > 150)
@@ -33,7 +30,7 @@ void AForm::beSigned(const Bureaucrat& b) {
   isSigned = true;
 }
 
-void AForm::execute(Bureaucrat const & executor) const {
+void AForm::execute(Bureaucrat const& executor) const {
   if (!isSigned)
     throw FormNotSignedException();
   if (executor.getGrade() > gradeToExecute)

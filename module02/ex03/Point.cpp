@@ -12,17 +12,14 @@
 
 #include "Point.hpp"
 
-Point::Point( void )
-    : x_(0),
-      y_(0) {}
+Point::Point(void) : x_(0), y_(0) {
+}
 
-Point::Point(float x, float y)
-    : x_(x),
-      y_(y) {}
+Point::Point(float x, float y) : x_(x), y_(y) {
+}
 
-Point::Point(const Point& other)
-    : x_(other.x_),
-      y_(other.y_) {}
+Point::Point(const Point& other) : x_(other.x_), y_(other.y_) {
+}
 
 // since x_ and y_ are const attributes, they cannot be reassigned
 // therefore, assignment operator has no effect
@@ -31,12 +28,13 @@ Point& Point::operator=(const Point& other) {
   return *this;
 }
 
-Point::~Point() {}
+Point::~Point() {
+}
 
-Fixed Point::x( void ) const {
+Fixed Point::x(void) const {
   return x_;
 }
 
-Fixed Point::y( void ) const {
+Fixed Point::y(void) const {
   return y_;
 }
