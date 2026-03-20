@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 12:56:13 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 10:47:10 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/20 10:40:36 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void Bureaucrat::signForm(Form& form) {
     form.beSigned(*this);
     std::cout << getName() << " signed " << form.getName() << std::endl;
   } catch (std::exception& e) {
-    std::cout << getName() << " couldn’t sign " << form.getName() << " because "
+    std::cout << getName() << " couldn't sign " << form.getName() << " because "
               << e.what() << std::endl;
   }
 }

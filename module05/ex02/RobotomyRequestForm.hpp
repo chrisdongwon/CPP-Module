@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 11:31:24 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 13:31:02 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/20 10:50:46 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class RobotomyRequestForm : public AForm {
  public:
   RobotomyRequestForm(const std::string& target = "");
-  // copy constructor
-  // assignment operator
-  // destructor
+  RobotomyRequestForm(const RobotomyRequestForm& other);
+  RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+  ~RobotomyRequestForm();
   
   void executeAction() const;
 

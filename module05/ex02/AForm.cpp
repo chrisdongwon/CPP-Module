@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 10:55:35 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 11:53:21 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/20 10:39:19 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ AForm::AForm(const std::string& name, int s, int e)
     throw GradeTooHighException();
   if (s > 150 || e > 150)
     throw GradeTooLowException();
+}
+
+AForm::AForm(const AForm& other)
+    : isSigned_(other.isSigned_),
+      gradeToExecute_(other.gradeToExecute_),
+      gradeToSign_(other.gradeToSign_),
+      name_(other.name_) {}
+
+AForm& AForm::operator=(const AForm& other) {
+  if (this != &other)
+    this->isSigned_ = other.isSigned_;
+  return *this;
 }
 
 AForm::~AForm() {}

@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 11:32:34 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/19 11:34:00 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/20 11:03:19 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
     : AForm("Robotomy", 72, 45), target_(target) {}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
+    : AForm(other), target_(other.target_) {}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(
+    const RobotomyRequestForm& other) {
+  if (this != &other) {
+    AForm::operator=(other);
+    this->target_ = other.target_;
+  }
+  return *this;
+}
+
+RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::executeAction() const {
   std::cout << "BZZZZZZ... drilling noises...\n";
