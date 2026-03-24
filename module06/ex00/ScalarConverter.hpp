@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 11:54:12 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/24 08:09:01 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/24 09:28:59 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class ScalarConverter {
 
  private:
   ScalarConverter();
-  ScalarConverter(const ScalarConverter& src);
-  ScalarConverter& operator=(const ScalarConverter& src);
+  ScalarConverter(const ScalarConverter& other);
+  ScalarConverter& operator=(const ScalarConverter& other);
   ~ScalarConverter();
 
   static bool isChar(const std::string& s);
