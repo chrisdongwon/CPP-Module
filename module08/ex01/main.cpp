@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:08:39 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/24 14:19:31 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/24 14:29:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ int main() {
 
     srand(time(NULL));
 
-    for (int i = 0; i < 10000; i++) randomNumbers.push_back(rand());
+    for (int i = 0; i < 10000; i++) {
+      randomNumbers.push_back(rand());
+    }
 
     bigSpan.addRange(randomNumbers.begin(), randomNumbers.end());
 
