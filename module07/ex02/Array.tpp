@@ -6,9 +6,12 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 11:01:03 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/24 11:55:29 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/24 12:37:25 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ARRAY_TPP_
+#define ARRAY_TPP_
 
 template <typename T>
 Array<T>::Array(unsigned int n) : size_(n) {
@@ -61,3 +64,5 @@ template <typename T>
 unsigned int Array<T>::size() const {
   return size_;
 }
+
+#endif // ARRAY_TPP_
