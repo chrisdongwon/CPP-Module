@@ -5,39 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/22 08:05:21 by cwon              #+#    #+#              #
-#    Updated: 2026/03/24 11:07:42 by cwon             ###   ########.fr        #
+#    Created: 2026/03/18 12:44:02 by cwon              #+#    #+#              #
+#    Updated: 2026/03/24 11:06:20 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex02
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = \
-	AMateria.hpp \
-	Character.hpp \
-	Cure.hpp \
-	Ice.hpp \
-	ICharacter.hpp \
-	IMateriaSource.hpp \
-	MateriaSource.hpp
-SRC = \
-	AMateria.cpp \
-	Character.cpp \
-	Cure.cpp \
-	Ice.cpp \
-	MateriaSource.cpp
+	Array.hpp
+TEMPLATE = \
+	Array.tpp
+SRC = 
 MAIN = main.cpp
 OBJ = $(SRC:.cpp=.o) $(MAIN:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME): $(OBJ) $(HEADER) $(TEMPLATE)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADER) $(TEMPLATE)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

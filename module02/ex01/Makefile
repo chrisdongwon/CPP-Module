@@ -6,7 +6,7 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/21 08:46:50 by cwon              #+#    #+#              #
-#    Updated: 2025/10/14 14:51:04 by cwon             ###   ########.fr        #
+#    Updated: 2026/03/24 11:08:36 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ $(NAME): $(OBJ) $(HEADER)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(TEST_FILES)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
