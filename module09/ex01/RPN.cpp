@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 15:17:37 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/29 15:20:15 by cwon             ###   ########.fr       */
+/*   Updated: 2026/03/29 15:24:16 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void RPN::calculate(char op) {
 }
 
 void RPN::process(const std::string& expression) {
-  for (size_t i = 0; i < expression.length(); i++) {
+  for (size_t i = 0; i < expression.length(); ++i) {
     if (expression[i] == ' ')
       continue;
 
