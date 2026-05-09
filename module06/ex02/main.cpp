@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 10:22:17 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/24 10:22:35 by cwon             ###   ########.fr       */
+/*   Updated: 2026/05/09 15:40:44 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main() {
   Base* obj = generate();
 
-  std::cout << "\nIdentify by pointer: ";
+  std::cout << "Identify by pointer: ";
   identify(obj);
 
   std::cout << "Identify by reference: ";

@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 10:11:03 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/24 10:26:20 by cwon             ###   ########.fr       */
+/*   Updated: 2026/05/09 15:40:19 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 Base::~Base() {}
 
 Base* generate(void) {
-  std::srand(std::time(0));
+  std::srand(std::time(NULL));
 
   int r = std::rand() % 3;
 
@@ -56,22 +56,19 @@ void identify(Base& p) {
     (void)a;
     std::cout << "A" << std::endl;
     return;
-  } catch (...) {
-  }
+  } catch (...) {}
 
   try {
     B& b = dynamic_cast<B&>(p);
     (void)b;
     std::cout << "B" << std::endl;
     return;
-  } catch (...) {
-  }
+  } catch (...) {}
 
   try {
     C& c = dynamic_cast<C&>(p);
     (void)c;
     std::cout << "C" << std::endl;
     return;
-  } catch (...) {
-  }
+  } catch (...) {}
 }
