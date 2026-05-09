@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 11:46:31 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/20 10:54:42 by cwon             ###   ########.fr       */
+/*   Updated: 2026/05/09 13:13:33 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,39 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
+#include "Intern.hpp"
+
 int main() {
   Bureaucrat boss("Boss", 1);
-  Bureaucrat intern("Intern", 150);
+  Intern intern;
 
-  ShrubberyCreationForm shrub("home");
-  RobotomyRequestForm robot("Bender");
-  PresidentialPardonForm pardon("Arthur Dent");
+  AForm *form = intern.makeForm("robotomy request", "Bender");
+  if (form != NULL) {
+    boss.signForm(*form);
+    boss.executeForm(*form);
+  }
+  delete form;
 
-  boss.signForm(shrub);
-  boss.executeForm(shrub);
+  form = intern.makeForm("shrubbery creation", "Home");
+  if (form != NULL) {
+    boss.signForm(*form);
+    boss.executeForm(*form);
+  }
+  delete form;
 
-  boss.signForm(robot);
-  boss.executeForm(robot);
+  form = intern.makeForm("presidential pardon", "Chris");
+  if (form != NULL) {
+    boss.signForm(*form);
+    boss.executeForm(*form);
+  }
+  delete form;
 
-  boss.signForm(pardon);
-  boss.executeForm(pardon);
-
-  intern.executeForm(pardon);
+  form = intern.makeForm("???", "Chris");
+  if (form != NULL) {
+    boss.signForm(*form);
+    boss.executeForm(*form);
+  }
+  delete form;
+  
   return 0;
 }
