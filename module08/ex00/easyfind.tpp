@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 12:24:06 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/24 12:44:29 by cwon             ###   ########.fr       */
+/*   Updated: 2026/05/09 19:28:34 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ const char* NotFoundException::what() const throw() {
 
 template <typename T>
 typename T::iterator easyfind(T& container, int value) {
-  typename T::iterator it;
-
-  it = std::find(container.begin(), container.end(), value);
-
+  typename T::iterator it = std::find(container.begin(), container.end(), value);
+  
   if (it == container.end())
     throw NotFoundException();
 
@@ -33,9 +31,7 @@ typename T::iterator easyfind(T& container, int value) {
 
 template <typename T>
 typename T::const_iterator easyfind(const T& container, int value) {
-  typename T::const_iterator it;
-
-  it = std::find(container.begin(), container.end(), value);
+  typename T::const_iterator it = std::find(container.begin(), container.end(), value);
 
   if (it == container.end())
     throw NotFoundException();
