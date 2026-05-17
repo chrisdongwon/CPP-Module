@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 09:36:50 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/24 09:49:47 by cwon             ###   ########.fr       */
+/*   Updated: 2026/04/24 15:34:44 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main() {
   std::cout << "Serialized value: " << raw << std::endl;
   std::cout << "Deserialized pointer: " << newPtr << std::endl;
 
-  if (originalPtr == newPtr)
+  if (&originalPtr == &newPtr)
     std::cout << "SUCCESS: Pointers match!" << std::endl;
   else
     std::cout << "FAIL: Pointers do not match!" << std::endl;

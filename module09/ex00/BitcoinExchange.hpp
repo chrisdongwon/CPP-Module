@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 14:53:50 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/29 15:05:47 by cwon             ###   ########.fr       */
+/*   Updated: 2026/05/17 20:22:40 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,15 @@ class BitcoinExchange {
   ~BitcoinExchange();
 
   void loadDatabase(const std::string& filename);
-  void processInput(const std::string& filename);
+  void process(const std::string& filename);
 
  private:
-  std::string trim(const std::string& str);
-  bool validDate(const std::string& date);
   bool isLeapYear(int year);
-  int daysInMonth(int year, int month);
-
-  bool parseValue(const std::string& str, float& value);
+  bool isValidDate(const std::string& date);
+  bool parseValue(const std::string& str, float& value,
+                  const std::string& line);
   float getRate(const std::string& date);
+  int daysInMonth(int year, int month);
 
   std::map<std::string, float> database_;
 };
