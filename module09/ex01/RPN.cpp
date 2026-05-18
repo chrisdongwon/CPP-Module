@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 15:17:37 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/29 15:24:16 by cwon             ###   ########.fr       */
+/*   Updated: 2026/05/18 14:35:35 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,30 @@ RPN& RPN::operator=(const RPN& other) {
 
 RPN::~RPN() {}
 
+void RPN::process(const std::string& expr) {
+  for (size_t i = 0; i < expr.length(); ++i) {
+    if (std::isspace(expr[i]))
+      continue;
+
+    if (std::isdigit(expr[i])) {
+      stack_.push(expr[i] - '0');
+    } else if (isOperator(expr[i])) {
+      evaluate(expr[i]);
+    } else
+      throw std::runtime_error("Error");
+  }
+
+  if (stack_.size() != 1)
+    throw std::runtime_error("Error");
+
+  std::cout << stack_.top() << std::endl;
+}
+
 bool RPN::isOperator(char c) {
   return (c == '+' || c == '-' || c == '*' || c == '/');
 }
 
-void RPN::calculate(char op) {
+void RPN::evaluate(char op) {
   if (stack_.size() < 2)
     throw std::runtime_error("Error");
 
@@ -57,23 +76,4 @@ void RPN::calculate(char op) {
   }
 
   stack_.push(result);
-}
-
-void RPN::process(const std::string& expression) {
-  for (size_t i = 0; i < expression.length(); ++i) {
-    if (expression[i] == ' ')
-      continue;
-
-    if (isdigit(expression[i])) {
-      stack_.push(expression[i] - '0');
-    } else if (isOperator(expression[i])) {
-      calculate(expression[i]);
-    } else
-      throw std::runtime_error("Error");
-  }
-
-  if (stack_.size() != 1)
-    throw std::runtime_error("Error");
-
-  std::cout << stack_.top() << std::endl;
 }

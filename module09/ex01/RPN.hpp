@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 15:15:47 by cwon              #+#    #+#             */
-/*   Updated: 2026/03/29 15:17:31 by cwon             ###   ########.fr       */
+/*   Updated: 2026/05/18 14:34:58 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class RPN {
   RPN& operator=(const RPN& other);
   ~RPN();
 
-  void process(const std::string& expression);
+  void process(const std::string& expr);
 
  private:
   bool isOperator(char c);
-  void calculate(char op);
+  void evaluate(char op);
 
   std::stack<int> stack_;
 };
