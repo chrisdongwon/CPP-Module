@@ -6,14 +6,14 @@
 #    By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/18 12:44:02 by cwon              #+#    #+#              #
-#    Updated: 2026/03/29 15:37:51 by cwon             ###   ########.fr        #
+#    Updated: 2026/05/21 12:06:02 by cwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 HEADER = \
 	PmergeMe.hpp
