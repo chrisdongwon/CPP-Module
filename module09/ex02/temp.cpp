@@ -143,7 +143,7 @@ class FordJohnson {
 std::vector<int> FordJohnson::arr;
 
 int main() {
-  std::vector<int> data = {8, 3, 15, 1, 9,  4, 12, 7,
+  std::vector<int> data = {8, 3, 15, 1, 9,  12, 12, 7,
                            0, 6, 11, 2, 14, 5, 10, 13};
 
   std::vector<int> sorted = FordJohnson::sort(data);
