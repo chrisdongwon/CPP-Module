@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 15:35:54 by cwon              #+#    #+#             */
-/*   Updated: 2026/09/24 15:42:23 by cwon             ###   ########.fr       */
+/*   Updated: 2026/10/20 18:49:15 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,31 @@
 class PmergeMe {
  public:
   PmergeMe();
+  PmergeMe(int argc, char** argv);
   PmergeMe(const PmergeMe& other);
   PmergeMe& operator=(const PmergeMe& other);
   ~PmergeMe();
 
-  void parse(int argc, char** argv);
-  void process();
+  void sortAndDisplay();
 
  private:
-  bool isPositiveInt(const char* arg);
-
-  void FordJohnson(std::list<int>& seq);
-  void FordJohnson(std::vector<int>& seq);
-
   template <typename Container>
-  void print(const std::string& label, const Container& container) {
-    std::cout << label << ": ";
-
-    typename Container::const_iterator it;
-    for (it = container.begin(); it != container.end(); ++it)
-      std::cout << *it << " ";
-    std::cout << std::endl;
-  };
+  static void print(const Container& container) {
+    typename Container::const_iterator it = container.begin();
+    while (it != container.end()) {
+      std::cout << *it;
+      ++it;
+      if (it != container.end())
+        std::cout << ' ';
+    }
+    std::cout << '\n';
+  }
+  
+  void sort(std::list<int> seq);
+  void sort(std::vector<int> seq);
 
   std::list<int> list_;
-  std::vector<int> vec_;
+  std::vector<int> vect_;
 };
 
 #endif  // PMERGEME_HPP_
