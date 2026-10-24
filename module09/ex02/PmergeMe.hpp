@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 15:35:54 by cwon              #+#    #+#             */
-/*   Updated: 2026/10/20 18:49:15 by cwon             ###   ########.fr       */
+/*   Updated: 2026/10/22 23:28:44 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,63 @@ class PmergeMe {
 
  private:
   template <typename Container>
-  static void print(const Container& container) {
-    typename Container::const_iterator it = container.begin();
-    while (it != container.end()) {
+  struct Original {
+    explicit Original(const Container& input) : values_(input) {}
+
+    bool less(int lhs, int rhs) const {
+      return values_[lhs] < values_[rhs];
+    }
+
+    const Container& values_;
+  };
+
+  template <typename Container>
+  struct LessThan {
+    explicit LessThan(const Original<Container>* original)
+        : original_(original) {}
+
+    bool operator()(int lhs, int rhs) const {
+      return original_->less(lhs, rhs);
+    }
+
+    const Original<Container>* original_;
+  };
+
+  template <typename Container>
+  static Container jacobsthalOrder(size_t count) {
+    Container result;
+    size_t prev = 1;
+    size_t n = 3;
+
+    while (prev < count) {
+      size_t upper = std::min(jacobsthal(n), count);
+
+      for (size_t rank = upper; rank > prev; --rank) {
+        result.push_back(rank);
+      }
+
+      prev = upper;
+      ++n;
+    }
+    return result;
+  }
+
+  template <typename Container>
+  static void print(const Container& c) {
+    typename Container::const_iterator it = c.begin();
+    while (it != c.end()) {
       std::cout << *it;
       ++it;
-      if (it != container.end())
+      if (it != c.end())
         std::cout << ' ';
     }
     std::cout << '\n';
   }
-  
+
+  static size_t jacobsthal(size_t n);
+  static std::vector<int> sortIndices(const std::vector<int>& indices,
+                                      const Original<std::vector<int> >& ctx);
+
   void sort(std::list<int> seq);
   void sort(std::vector<int> seq);
 
