@@ -6,7 +6,7 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 17:40:22 by cwon              #+#    #+#             */
-/*   Updated: 2026/10/22 23:32:27 by cwon             ###   ########.fr       */
+/*   Updated: 2026/10/24 17:41:13 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ PmergeMe::PmergeMe(int argc, char** argv) {
 
   for (int i = 1; i < argc; ++i) {
     int value = parsePositiveInt(argv[i]);
-    list_.push_back(value);
+    deque_.push_back(value);
     vect_.push_back(value);
   }
 }
 
 PmergeMe::PmergeMe(const PmergeMe& other)
-    : list_(other.list_), vect_(other.vect_) {}
+    : deque_(other.deque_), vect_(other.vect_) {}
 
 PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
   if (this != &other) {
-    list_ = other.list_;
+    deque_ = other.deque_;
     vect_ = other.vect_;
   }
   return *this;
@@ -84,18 +84,18 @@ void PmergeMe::sortAndDisplay() {
   long vectorTime = elapsedMicroseconds(start, end);
 
   gettimeofday(&start, NULL);
-  sort(list_);
+  sort(deque_);
   gettimeofday(&end, NULL);
   long listTime = elapsedMicroseconds(start, end);
 
   std::cout << "After:  ";
-  print(vect_);
+  print(deque_);
 
   std::cout << "Time to process a range of " << vect_.size()
             << " elements with std::vector : " << vectorTime << " us" << '\n';
 
-  std::cout << "Time to process a range of " << list_.size()
-            << " elements with std::list : " << listTime << " us" << '\n';
+  std::cout << "Time to process a range of " << deque_.size()
+            << " elements with std::deque : " << listTime << " us" << '\n';
 }
 
 size_t PmergeMe::jacobsthal(size_t n) {
@@ -109,9 +109,20 @@ size_t PmergeMe::jacobsthal(size_t n) {
   return (powerOfTwo + 1) / 3;
 }
 
-void PmergeMe::sort(std::list<int> seq) {
-  (void)seq;
-  std::cout << "sort list here" << std::endl;
+void PmergeMe::sort(std::deque<int> seq) {
+  Original<std::deque<int> > o(seq);
+  std::deque<int> indices, result;
+
+  for (size_t i = 0; i < seq.size(); ++i)
+    indices.push_back(static_cast<int>(i));
+
+  indices = sortIndices(indices, o);
+
+  for (size_t i = 0; i < indices.size(); ++i) {
+    result.push_back(seq[indices[i]]);
+  }
+
+  deque_ = result;
 }
 
 void PmergeMe::sort(std::vector<int> seq) {
@@ -128,6 +139,68 @@ void PmergeMe::sort(std::vector<int> seq) {
   }
 
   vect_ = result;
+}
+
+std::deque<int> PmergeMe::sortIndices(const std::deque<int>& indices,
+                                      const Original<std::deque<int> >& o) {
+  const size_t n = indices.size();
+
+  if (n < 2)
+    return indices;
+
+  std::deque<int> a;
+  std::deque<int> b(o.values_.size(), -1);
+
+  for (size_t i = 0; i + 1 < n; i += 2) {
+    int first = indices[i];
+    int second = indices[i + 1];
+
+    if (o.less(first, second))
+      std::swap(first, second);
+
+    a.push_back(first);
+    b[first] = second;
+  }
+
+  bool hasStraggler = (n % 2 != 0);
+  int straggler = hasStraggler ? indices[n - 1] : -1;
+
+  std::deque<int> sortedA = sortIndices(a, o);
+  std::deque<int> mainPos(sortedA.size());
+  std::deque<int> chain;
+
+  chain.push_back(b[sortedA[0]]);
+
+  for (size_t i = 0; i < sortedA.size(); ++i) {
+    chain.push_back(sortedA[i]);
+    mainPos[i] = static_cast<int>(i + 1);
+  }
+
+  std::deque<size_t> order =
+      jacobsthalOrder<std::deque<size_t> >(sortedA.size());
+
+  for (size_t i = 0; i < order.size(); ++i) {
+    size_t rank = order[i];
+    int pending = b[sortedA[rank - 1]];
+    size_t bound = static_cast<size_t>(mainPos[rank - 1]);
+
+    std::deque<int>::iterator position =
+        std::lower_bound(chain.begin(), chain.begin() + bound, pending,
+                         LessThan<std::deque<int> >(&o));
+    int insertedAt = static_cast<int>(position - chain.begin());
+
+    chain.insert(position, pending);
+    for (size_t j = 0; j < mainPos.size(); ++j)
+      if (mainPos[j] >= insertedAt)
+        ++mainPos[j];
+  }
+
+  if (hasStraggler) {
+    std::deque<int>::iterator position = std::lower_bound(
+        chain.begin(), chain.end(), straggler, LessThan<std::deque<int> >(&o));
+    chain.insert(position, straggler);
+  }
+  return chain;
 }
 
 std::vector<int> PmergeMe::sortIndices(const std::vector<int>& indices,

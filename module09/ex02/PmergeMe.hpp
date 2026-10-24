@@ -6,15 +6,15 @@
 /*   By: cwon <cwon@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 15:35:54 by cwon              #+#    #+#             */
-/*   Updated: 2026/10/22 23:28:44 by cwon             ###   ########.fr       */
+/*   Updated: 2026/10/24 17:39:46 by cwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGEME_HPP_
 #define PMERGEME_HPP_
 
+#include <deque>
 #include <iostream>
-#include <list>
 #include <vector>
 
 class PmergeMe {
@@ -84,12 +84,14 @@ class PmergeMe {
 
   static size_t jacobsthal(size_t n);
   static std::vector<int> sortIndices(const std::vector<int>& indices,
-                                      const Original<std::vector<int> >& ctx);
+                                      const Original<std::vector<int> >& o);
+  static std::deque<int> sortIndices(const std::deque<int>& indices,
+                                     const Original<std::deque<int> >& o);
 
-  void sort(std::list<int> seq);
+  void sort(std::deque<int> seq);
   void sort(std::vector<int> seq);
 
-  std::list<int> list_;
+  std::deque<int> deque_;
   std::vector<int> vect_;
 };
 
